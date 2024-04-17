@@ -1543,10 +1543,10 @@ global.dfail = (type, m, conn) => {
         private: '*『 الميزه دي للبرايفت - الخاص بس ! 』*',
         admin: '*『 الميزه دي للادمن بس! 』*',
         botAdmin: '*『 ارفع البوت ادمن الاول ! 』*',
-        unreg: '*[ لحظة !! انت مش مسجل ]*\n\n*『 سجل الامر عشان تفعله 』*\n*➣ #تسجيل*',
+        unreg: '*[ لحظة !! انت مش مسجل ]*\n\n*『 سجل الامر عشان تفعله 』*\n*➣ .reg*',
         restrict: '*『 الميزه دي المطور لغيها ! 』*'
     }[type]
-  const aa={'\x71\x75\x6f\x74\x65\x64':m,'\x75\x73\x65\x72\x4a\x69\x64':conn['\x75\x73\x65\x72']['\x6a\x69\x64']},prep=generateWAMessageFromContent(m['\x63\x68\x61\x74'],{'\x65\x78\x74\x65\x6e\x64\x65\x64\x54\x65\x78\x74\x4d\x65\x73\x73\x61\x67\x65':{'\x74\x65\x78\x74':msg,'\x63\x6f\x6e\x74\x65\x78\x74\x49\x6e\x66\x6f':{'\x65\x78\x74\x65\x72\x6e\x61\x6c\x41\x64\x52\x65\x70\x6c\x79':{'\x74\x69\x74\x6c\x65':'\x2a\x5b\x20\u26a0\x20\x5d\x20\u0645\u0639\u0644\u0648\u0645\u0647\x20\u0645\u0647\u0645\u0647\x2a','\x62\x6f\x64\x79':'\ud835\ude62\x2c\ud835\ude5a\x2c\ud835\ude5c\x2c\ud835\ude64\x2c\x20\u2766\ufe0e','\x74\x68\x75\x6d\x62\x6e\x61\x69\x6c':imagen1,'\x73\x6f\x75\x72\x63\x65\x55\x72\x6c':'\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x61\x74\x6f\x6d\x2e\x62\x69\x6f\x2f\x6d\x65\x67\x6f\x35\x31\x5f\x35\x31'}}}},aa);if(msg)return conn['\x72\x65\x6c\x61\x79\x4d\x65\x73\x73\x61\x67\x65'](m['\x63\x68\x61\x74'],prep['\x6d\x65\x73\x73\x61\x67\x65'],{'\x6d\x65\x73\x73\x61\x67\x65\x49\x64':prep['\x6b\x65\x79']['\x69\x64']});
+  const aa={'quoted':m,'userJid':conn['user']['jid']},prep=generateWAMessageFromContent(m['chat'],{'extendedTextMessage':{'text':msg,'contextInfo':{'externalAdReply':{'title':'*[ ⚠ ] معلومه مهمه*','body':'بوت السلطان','thumbnail':imagen1,'sourceUrl':'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M'}}}},aa);if(msg)return conn['relayMessage'](m['chat'],prep['message'],{'messageId':prep['key']['id']});
 };
 const file = global.__filename(import.meta.url, true);
 watchFile(file, async () => {
