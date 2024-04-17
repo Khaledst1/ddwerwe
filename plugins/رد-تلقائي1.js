@@ -4,7 +4,7 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 let chat = global.db.data.chats[m.chat]
 let name = conn.getName(m.sender)
 
-if (/^بووت|روبوت$/i.test(m.text) ) { //sin prefijo 
+if (/^بووووت|بوت$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`_*أامـر يـ عـيـونـي 🤭💮✨*_`, `ايـش بـدك 👀♥️✨`])}
 `.trim()
