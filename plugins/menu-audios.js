@@ -113,6 +113,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. انستغرام*
 > *. انستا*
+> *. تيكتوك*
+> *. تيك*
 > *. شغل*
 > *. تيكتوك*
 > *. تويتر*
@@ -129,6 +131,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. صراحه*
 > *. بوت*
 > *. ايدت*
+> *. بيض*
 > *. فيك*
 > *. ميمز*
 > *. اختبرني*
@@ -150,6 +153,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *˼‏🛠️˹ قـسـم التحويل╿↶*
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. ملصق*
+> *. رابطي*
 > *. جوده*
 > *. سرقة*
 > *. لفيديو*
