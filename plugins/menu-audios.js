@@ -113,6 +113,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. انستغرام*
 > *. انستا*
+> *. خلفيات*
 > *. تيكتوك*
 > *. تيك*
 > *. شغل*
@@ -131,7 +132,10 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. صراحه*
 > *. بوت*
 > *. ايدت*
-> *. بيض*
+> *. فكك*
+> *. خمن*
+> *. شخصيه*
+> *. كوره*
 > *. فيك*
 > *. ميمز*
 > *. اختبرني*
