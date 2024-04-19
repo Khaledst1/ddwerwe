@@ -134,6 +134,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. بوت*
 > *. ايدت*
 > *. فكك*
+> *. علم*
 > *. شاذ*
 > *. اسئلني*
 > *. رياضه*
