@@ -8,13 +8,13 @@ const handler = async (m, {conn, args, command, usedPrefix}) => {
   if (!args[0]) throw `*[❗معلومه❗] حط رابط الفيديو مثال: ${usedPrefix + command}* https://fb.watch/fOTpgn6UFQ/`;
   if (!args[0].match(/www.facebook.com|fb.watch/g)) throw `*[❗𝐈𝐍𝐅𝐎❗] حط رابط الفيديو مثال: ${usedPrefix + command}* https://fb.watch/fOTpgn6UFQ/`;
   try {
-    await m.reply(`*انتظر جاري التحميل تابع صاحب البوت\n\nhttps://www.atom.bio/mego51_51*`);
+    await m.reply(`*انتظر جاري التحميل تابع صاحب البوت\n\nhttps://instagram.com/youssef.alsoltan_*`);
     const d2ata = await facebook.v1(args[0]);
     let r2es = '';
     if (d2ata.urls && d2ata.urls.length > 0) {
       r2es = `${d2ata.urls[0]?.hd || d2ata.urls[1]?.sd || ''}`;
     }
-    conn.sendFile(m.chat, r2es, 'error.mp4', `*𝙰𝚀𝚄𝙸 𝙴𝚂𝚃𝙰 𝚂𝚄 𝚅𝙸𝙳𝙴𝙾*`, m);
+    conn.sendFile(m.chat, r2es, 'error.mp4', `*تم بواسطه بوت السلطان*`, m);
   } catch (err1) {
     try {
       const req = await igeh(args[0]);
