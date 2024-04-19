@@ -91,6 +91,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. آيه*
 > *. حديث*
+> *. دين*
 > *. قران*
 > *. الله*
 > *• ∙ ∙━━╍━﹝⚙️﹞━╍━━∙ ∙ •*
@@ -145,6 +146,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. تهكير*
 > *. لو*
 > *. هل*
+> *. رتب*
 > *. ترجم*
 > *. زواج*
 > *. انطق*
