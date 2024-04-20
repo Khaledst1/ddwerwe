@@ -18,12 +18,13 @@ let sn = createHash('md5').update(who).digest('hex')
 
 let str = `
 ┌───「 *بروفايل* 」
+⟣ *صـوره قـمـر زي صـاحـبـهـا 🥺♥.!*
+
 ⟣ *🔖 الإسم:* 
    • ${username} ${registered ? '\n   • ' + name + ' ': ''}
    • @${who.replace(/@.+/, '')}
 ⟣ *📱الرقم:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
 ⟣ *🔗الرابط:* wa.me/${who.split`@`[0]}${registered ? '\n⟣ *🎈Age*: ' + age + ' years' : ''}
-⟣ *⚠️التحذيرات:* 0
 └──────────────`
     conn.sendFile(m.chat, pp, 'perfil.jpg', str, m, false, { mentions: [who] })
 
