@@ -21,12 +21,12 @@ handler.before = async function(m) {
       const comienzop = `*اختار قبل الاعب الاخر*  
 حجر
 ورقه
-مقص\nالنقاط +${room.poin}𝚇𝙿\nلفل ${room.poin_lose}𝚇𝙿\n*𝕸𝖎𝖐𝖚 𝕭𝖔𝖙*
+مقص\nالنقاط +${room.poin}𝚇𝙿\nلفل ${room.poin_lose}𝚇𝙿\n*بوت السلطان*
 `;
       const comienzop2 = `*اختار قبل الاعب الاخر*
 حجر
 ورقه
-مقص\nالنقاط +${room.poin}𝚇𝙿\nلفل ${room.poin_lose}𝚇𝙿\n𝕸𝖎𝖐𝖚 𝕭𝖔𝖙`;
+مقص\nالنقاط +${room.poin}𝚇𝙿\nلفل ${room.poin_lose}𝚇𝙿\nبوت السلطان`;
 
       if (!room.pilih) this.sendMessage(room.p, {text: comienzop}, {quoted: m});
       if (!room.pilih2) this.sendMessage(room.p2, {text: comienzop2}, {quoted: m});
@@ -75,7 +75,7 @@ handler.before = async function(m) {
       else if (k.test(stage) && g.test(stage2)) win = room.p2;
       else if (stage == stage2) tie = true;
       this.reply(room.asal, `
-*👑 *انتهت اللعبه النتائج* 👑*${tie ? '\n*—◉ *تعادل*!!*' : ''}
+*👑 *انتهت اللعبه النتائج* 👑*${tie ? '\n—◉ *تعادل*!!*' : ''}
 *@${room.p.split`@`[0]} (${room.text})* ${tie ? '' : room.p == win ? `  +${room.poin}XP*` : `  ${room.poin_lose}XP*`}
 *@${room.p2.split`@`[0]} (${room.text2})* ${tie ? '' : room.p2 == win ? `  +${room.poin}XP*` : `  ${room.poin_lose}XP*`}
 `.trim(), m, {mentions: [room.p, room.p2]} );
