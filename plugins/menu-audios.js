@@ -129,6 +129,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *˼‏🎮˹ قـسـم الترفيه╿↶*
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. اكس او*
+> *. تحدي*
 > *. لعبة*
 > *. صراحه*
 > *. بوت*
@@ -147,13 +148,17 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. ميمز*
 > *. اختبرني*
 > *. احزر*
+> *. حرب*
+> *. اتحداك*
 > *. عين*
 > *. قلب*
 > *. تهكير*
 > *. لو*
 > *. ايموجي*
+> *. صداقه*
 > *. بيحبني*
 > *. حب*
+> *. حساب*
 > *. هل*
 > *. رتب*
 > *. ترجم*
@@ -168,6 +173,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *⋄━───═◞⬪⋇⬪◟═───━⋄*
 > *. ملصق*
 > *. صورهai*
+> *. مطلوب*
 > *. رابطي*
 > *. جوده*
 > *. سرقة*
@@ -179,7 +185,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. مكس*
 > *. لجواهر*
 > *. ستك*
-> *. تلجراف*
+> *. تليجراف*
 > *. لكرتون*
 > *. باركود*
 > *• ∙ ∙━━╍━﹝🎚️﹞━╍━━∙ ∙ •*
