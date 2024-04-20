@@ -27,7 +27,7 @@ let handler = async (m) => {
     let { title, artists, album, genres, release_date } = res.metadata.music[0]
     
 let txt = `
-𝚁𝙴𝚂𝚄𝙻𝚃
+التعرف علي الموسيقي
 • 📌 *العنوان*: ${title}
 • 👨‍🎤 *الفنان*: ${artists !== undefined ? artists.map(v => v.name).join(', ') : 'لم يتم العثور'}
 • 💾 *الألبوم*: ${album.name || 'لم يتم العثور'}
@@ -42,5 +42,5 @@ let txt = `
   }
 }
 
-handler.command = /^quemusica|shazam|whatmusic$/i
+handler.command = /^التعرف|shazam|whatmusic$/i
 export default handler
