@@ -2,10 +2,12 @@ let handler = async (m, { conn }) => {
     let user = global.db.data.users[m.sender];
     let name = conn.getName(m.sender);
     let taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
-    let message = `تقصد نفسك`;
+    let message = `> اهلا بك انا بوت واتساب اسمي بوت السلطان بوت عباره عن تلبيه طلبك والترفيه واحمي الجروبات ويوجد بها تحميل الاغاني والالعاب وتحميل الفيديوهات من جميع المنصات وهذا يوفر لك استخدام تطبيقات كثيره وكما يوجد العاب تقدر تلعبها انت واصدقائك في الجروبات وعلى ما اظن انه يوجد تحديثات كثيره اخرى نحدثها قريبا وانضم الى قناه الوتساب الرسميه لمعرفه التحديثات المستقبليه
+
+> *https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*`;
     
 
-    conn.sendFile(m.chat, 'https://telegra.ph/file/caafdb2292db8180b99fe.mp4', 'video.mp4', message, m);
+    conn.sendFile(m.chat, 'https://telegra.ph/file/75d9acc4033e08bf354cb.jpg', 'video.mp4', message, m);
 };
 
 handler.customPrefix = /^(bot|بوت)$/i;
