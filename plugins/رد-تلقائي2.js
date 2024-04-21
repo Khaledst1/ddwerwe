@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
     }, 'extendedTextMessage')
     if (m.quoted && text) _m = conn.forwardMessage('status@broadcast', await m.quoted.cMod('status@broadcast', text))
     //m.reply((await _m).key.id)
-    m.reply('*_اهلا بك في بوت السلطان لاستخدام البوت اكتب  :  .اوامر  🌸_*')
+    m.reply('*_اهلا بك في بوت السلطان لاستخدام البوت اكتب  :  .اوامر_*')
     }
 handler.help = ['subirestado']
 handler.tags = ['General']
