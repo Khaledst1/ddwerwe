@@ -4,7 +4,7 @@ let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status
 let chat = global.db.data.chats[m.chat]
 let name = conn.getName(m.sender)
 
-if (/^بووت|روبوت$/i.test(m.text) ) { //sin prefijo 
+if (/^ولا|ولا$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`_*أامـر يـ عـيـونـي 🤭💮✨*_`, `ايـش بـدك 👀♥️✨`])}
 `.trim()
@@ -12,7 +12,7 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
 }
 
-if (/^بحبك|بموت فيكي|حبي$/i.test(m.text) ) { //sin prefijo 
+if (/^haj|jl$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`_*امممم 😳*_`, `*_انا اكتر 🤭🌸_*`, `*_كسووووف 😳_*`])}
 `.trim()
