@@ -11,7 +11,7 @@ const handler = async (m, { conn, command, text }) => {
   const getRandomMessage = (messages) => messages[Math.floor(Math.random() * messages.length)];
   const loveMessage = isHighLove ? getRandomMessage(loveMessages) : getRandomMessage(notSoHighLoveMessages);
   const response =`
-    *❮ ✅ ┇ تـم تـنـفـيـذ أمـر قـلـب ❯*
+    > *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M
   `
   async function loading() {
 var hawemod = [
