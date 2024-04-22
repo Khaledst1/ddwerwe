@@ -39,7 +39,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
                 }
             }
         }
-        const textoLetra = `${tradutor.texto2[0]} *${tituloL || ''}*\n${tradutor.texto2[1]}  *${artistaL || ''}*\n\n${tradutor.texto2[2]} \n${lyrics.lyrics || 'Lyrics not found.'}`;
+        const textoLetra = `${tradutor.texto2[0]} *${tituloL || ''}*\n${tradutor.texto2[1]}  *${artistaL || ''}*\n\n${tradutor.texto2[2]} \n${lyrics.lyrics || 'لم يتم العثور.'}`;
         await conn.sendMessage(m.chat, { image: { url: img }, caption: textoLetra }, { quoted: m });
         await conn.sendMessage(m.chat, { audio: { url: result[0]?.preview }, fileName: `${artistaL || '-'} - ${tituloL || '-'}.mp3`, mimetype: 'audio/mp4' }, { quoted: m });
     } catch (e) {
@@ -49,16 +49,16 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 };
 handler.help = ['lirik', 'letra'].map((v) => v + ' <Apa>');
 handler.tags = ['internet'];
-handler.command = /^(lirik|lyrics|lyric|letra)$/i;
+handler.command = /^(lirik|كلمات-اغنيه|lyric|letra)$/i;
 export default handler;
 
 /* Creditos: https://github.com/darlyn1234 */
 async function searchLyrics(term) {
   try {
-    if (!term) return "🟥 Provide the name of the song to search the lyrics";
+    if (!term) return "🟥 أدخل اسم الأغنية للبحث في كلمات الأغاني";
     const geniusResponse = await axios.get(`https://letra-lime.vercel.app/genius?query=${term}`);
     const geniusData = geniusResponse.data;
-    if (!geniusData.length) return `🟨 Couldn't find any lyrics for "${term}"`;
+    if (!geniusData.length) return `🟨 عذرا لم يتم اكتشاف الكلمات "${term}"`;
     const lyricsUrl = geniusData[0].url;
     const lyricsResponse = await axios.get(`https://letra-lime.vercel.app/lyrics?url=${lyricsUrl}`);
     const result = {
