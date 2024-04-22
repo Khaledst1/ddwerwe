@@ -15,13 +15,13 @@ const handler = async (m, { conn, command, text }) => {
   `
   async function loading() {
 var hawemod = [
-"❤️",
-     "❤️",
-  "🩷",
-  "💛",
-  "💚",
-  "🩵",
-  "💙",
+"اسمع",
+     "حبيت   اقولك",
+  "انك ",
+  "شخص",
+  "عظيم",
+  "مطور بوت السلطان",
+  "يحبك",
   "💜",
   "🖤",
   "🩶",
@@ -34,7 +34,7 @@ var hawemod = [
                 "💝",
                   "💟",
                     "♥️",
-                      "❤️‍🩹"
+                      "> *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M"
 ]
    let { key } = await conn.sendMessage(m.chat, {text: `*❮ ⏳ ┇ جـاري تـنـفـيـذ أمـر قـلـب ❯*`, mentions: conn.parseMention(response)}, {quoted: m})
  for (let i = 0; i < hawemod.length; i++) {
