@@ -49,7 +49,7 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
 };
 handler.help = ['lirik', 'letra'].map((v) => v + ' <Apa>');
 handler.tags = ['internet'];
-handler.command = /^(lirik|كلمات-اغنيه|lyric|letra)$/i;
+handler.command = /^(كلمات-اغنية|كلمات-اغنيه|lyric|letra)$/i;
 export default handler;
 
 /* Creditos: https://github.com/darlyn1234 */
