@@ -1546,7 +1546,7 @@ global.dfail = (type, m, conn) => {
         unreg: '*[ لحظة !! انت مش مسجل ]*\n\n*『 سجل الامر عشان تفعله 』*\n*➣ .تسجيل*',
         restrict: '*『 الميزه دي المطور لغيها ! 』*'
     }[type]
-  const aa={'quoted':m,'userJid':conn['user']['jid']},prep=generateWAMessageFromContent(m['chat'],{'extendedTextMessage':{'text':msg,'contextInfo':{'externalAdReply':{'title':'*[ ⚠ ] معلومه مهمه*','body':'بوت السلطان','thumbnail':imagen1,'sourceUrl':'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M'}}}},aa);if(msg)return conn['relayMessage'](m['chat'],prep['message'],{'messageId':prep['key']['id']});
+  const aa={'quoted':m,'userJid':conn['user']['jid']},prep=generateWAMessageFromContent(m['chat'],{'extendedTextMessage':{'text':msg,'contextInfo':{'externalAdReply':{'title':'[ ⚠ ] *عذرآ*','body':'بوت السلطان','thumbnail':imagen1,'sourceUrl':'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M'}}}},aa);if(msg)return conn['relayMessage'](m['chat'],prep['message'],{'messageId':prep['key']['id']});
 };
 const file = global.__filename(import.meta.url, true);
 watchFile(file, async () => {
