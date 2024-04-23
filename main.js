@@ -385,7 +385,7 @@ global.reloadHandler = async function(restatConn) {
   }
 
   conn.welcome = '*⦓          ⦓😶‍🌫️⦔          ⦔*\n*❤️ꪶ→ @subject*\n*🍀ꪶ→ @user*\n*😍ꪶ→مـرحـبـاً بـك فـي الــجروب نـورت\n*💠ꪶ→ اقـرا الوصف*\n*⦓          ⦓😶‍🌫️⦔          ⦔*\n *المجموعه:*\n\n${groupMetadata.subject}\n\n*⦓          ⦓😶‍🌫️⦔          ⦔*';
-  conn.bye = '*⦓          ⦓👋🏻⦔          ⦔*\n*😏ꪶ→ @user*\n*ꪶ→ لا بأس لم يكن له وجود اساسا 🤣*\n*⦓          ⦓👋🏻⦔          ⦔**';
+  conn.bye = '*⦓          ⦓👋🏻⦔          ⦔*\n*😏ꪶ→ @user*\n*ꪶ→ لا بأس لم يكن له وجود اساسا 🤣*\n*⦓          ⦓👋🏻⦔          ⦔*';
   conn.spromote = '*[ 📌 ] @user تمت ترقيته إلى المسؤول.*';
   conn.sdemote = '*[ 📌 ] @user تم تخفيض رتبته من المسؤول.*';
   conn.sDesc = '*[ 📌 ] تم تعديل وصف المجموعه.*';
