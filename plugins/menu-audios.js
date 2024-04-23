@@ -34,7 +34,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *▫️📆تاريخ:* ${date}
 > *▫️🕛وقت نشط:* ${uptime}
 
-> *▫️رقم اصدار البوت: v1
+> *▫️رقم اصدار البوت: v1*
 > *▫️🎟️بريم:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
 
 
