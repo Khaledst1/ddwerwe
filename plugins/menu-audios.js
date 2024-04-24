@@ -44,7 +44,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *▫️اليك القائمه يحب*  ${taguser}
 > *▫️هذا البوت صنع بواسطه يوسف السلطان انضم للقناة عبر الواتساب لمعرفه التحديثات القادمه*
 > *▫️https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*
-
+> *▫️مجموعه الدعم*
+> *▫️https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*
 
 > *▫️انستجرام*
 > *▫️https://instagram.com/youssef.alsoltan_*
