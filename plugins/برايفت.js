@@ -1,35 +1,15 @@
-//to use this grouponly mustbe off(using a sigle prefix is preferred)
-export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }) {
-    // Ignore messages sent by the bot itself
-    if (m.isBaileys && m.fromMe) return true;
-  
-    // Allow the owner's messages 
-    if (isOwner) return false;
-  
-    // Ignore messages sent in group chats
-    if (m.isGroup) return false;
+// TheMystic-Bot-MD@BrunoSobrino - _antiprivado.js
 
-     const allowlist = global.allowed || [];
-    if (allowlist.includes(m.sender.split('@')[0])) return false;
- 
-    // If the message is not sent in a group, it's a private message 
-    if (!m.isGroup) {
-      // Fetch chat data and bot settings
-      let chat = global.db.data.chats[m.chat];
-      let bot = global.db.data.settings[this.user.jid] || {};
-  
-      // Check if the "PM Blocker" feature is enabled, and the sender is not an owner or real owner
-      if (bot.pmblocker && !isOwner && !isROwner) {
-        // Block the sender unconditionally for any private message sent
-        await m.reply(`*[❗] مرحبًا @${m.sender.split`@`[0]}، يُمنع التحدث في الخاص مع البوت لهذا السبب سيتم حظرك.*\n\n*اذا كنت تريد تجربه البوت ادخل جروب البوت『 https://chat.whatsapp.com/IbnsAmO8Wp53ES0WPIxk9s 』*\n\n*اذا كنت تريد ان تكلم مطور البوت هذا رقمي 『‏‪ 201277272498*`, false, { mentions: [m.sender] });
-        await this.updateBlockStatus(m.chat, 'block');
-  
-        // Return true to indicate that the private message should be blocked
-        return true;
-      }
-    }
-  
-    
-    return true;
+export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) {
+  if (m.isBaileys && m.fromMe) return !0;
+  if (m.isGroup) return !1;
+  if (!m.message) return !0;
+  if (m.text.includes('PIEDRA') || m.text.includes('PAPEL') || m.text.includes('TIJERA') || m.text.includes('serbot') || m.text.includes('jadibot')) return !0;
+  const chat = global.db.data.chats[m.chat];
+  const bot = global.db.data.settings[this.user.jid] || {};
+  if (bot.antiPrivate && !isOwner && !isROwner) {
+    await m.reply(`https://chat.whatsapp.com/IbnsAmO8Wp53ES0WPIxk9s _*< ANTI-PRIVATE />*_\n\n*[ ℹ️ ] The anti-private feature is enabled, therefore you will be blocked.*`, true, {mentions: [m.sender]});
+    await this.updateBlockStatus(m.chat, 'block');
   }
-  
+  return !1;
+}
