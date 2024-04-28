@@ -8,7 +8,7 @@ export async function before(m, {conn, isAdmin, isBotAdmin, isOwner, isROwner}) 
   const chat = global.db.data.chats[m.chat];
   const bot = global.db.data.settings[this.user.jid] || {};
   if (bot.antiPrivate && !isOwner && !isROwner) {
-    await m.reply(`https://chat.whatsapp.com/IbnsAmO8Wp53ES0WPIxk9s _*< ANTI-PRIVATE />*_\n\n*[ ℹ️ ] The anti-private feature is enabled, therefore you will be blocked.*`, true, {mentions: [m.sender]});
+    await m.reply(`https://chat.whatsapp.com/IbnsAmO8Wp53ES0WPIxk9s _*< ANTI-PRIVATE />*_\n\n*[ ℹ️ ] The anti-private feature is enabled, therefore you will be blocked.*`, false, {mentions: [m.sender]});
     await this.updateBlockStatus(m.chat, 'block');
   }
   return !1;
