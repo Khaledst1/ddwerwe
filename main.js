@@ -43,7 +43,7 @@ global.__filename = function filename(pathURL = import.meta.url, rmPrefix = plat
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({...query, ...(apikeyqueryname ? {[apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name]} : {})})) : '');
 
-global.timestamp = {start: new Date};
+global.timestamp = {close: new Date};
 global.videoList = [];
 global.videoListXXX = [];
 
@@ -543,16 +543,16 @@ setInterval(async () => {
 }, 1000 * 60 * 60);
 setInterval(async () => {
   if (stopped === 'open' || !conn || !conn.user) return;
-  const _uptime = process.uptime() * 1000;
-  const uptime = clockString(_uptime);
-  const bio = `تم صناعه البوت بواسطه يوسف السلطان:\n\n ${uptime}`;
-  await conn.updateProfileStatus(bio).catch((_) => _);
-}, 60000);
-function clockString(ms) {
-  const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
-  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24;
-  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
-  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
-  return [d, ' يوم ️', h, ' ساعه ', m, ' دقيقه ', s, ' ثانيه '].map((v) => v.toString().padStart(2, 0)).join('');
+  //const _uptime = process.uptime() * 1000;
+ // const uptime = clockString(_uptime);
+//  const bio = `تم صناعه البوت بواسطه يوسف السلطان:\n\n ${uptime}`;
+//  await conn.updateProfileStatus(bio).catch((_) => _);
+//}, 60000);
+//function clockString(ms) {
+//  const d = isNaN(ms) ? '--' : Math.floor(ms / 86400000);
+//  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24;
+//  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+//  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+//  return [d, ' يوم ️', h, ' ساعه ', m, ' دقيقه ', s, ' ثانيه '].map((v) => v.toString().padStart(2, 0)).join('');
 }
 _quickTest().catch(console.error);
