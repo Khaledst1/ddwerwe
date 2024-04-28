@@ -17,7 +17,7 @@
             "texto3": "_*< ANTI-LINK 2 />*_\n\n*[ ℹ️ ] Este recurso está desabilitado porque o recurso* _restrict_ *está habilitado.*"
         },
         "_antiprivado": {
-            "texto1": "_*< ANTI-PRIVADO />*_\n\n*[ ℹ️ ] A função antiprivada está habilitada, portanto você será bloqueado.*"
+            "texto1": "_*< تحذير استخدام البوت في الخاص />*_\n\n*[ 🙁 ] اهلا ياه ${taguser} استخدام البوت في الخاص ممنوع اذا كنت تود تجربه البوت انضم الي جروب الدعم https://chat.whatsapp.com/IbnsAmO8Wp53ES0WPIxk9s او قم بمحادثه المطور +201277272498*"
         },
         "_antitoxic": {
             "texto1": "_*< ANTI-TOXIC />*_\n\n*[ ℹ️ ] ",
