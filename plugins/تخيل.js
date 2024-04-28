@@ -37,7 +37,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
     try {
         const text = args.length >= 1 ? args.join(" ") : m.quoted && m.quoted.text || '';
         if (!text.trim()) {
-            await m.reply(`تخيل و انا سأرسل لك ما تخيلته انا بوت السلطان استطيع فعلها نعم ! \nمـــثال:\n*.artdraw* girl with hijan  style`);
+            await m.reply(`تخيل و انا سأرسل لك ما تخيلته انا بوت السلطان استطيع فعلها نعم لكن اكتب ما تريده باللغه الانجليزيه ! \nمـــثال:\n*.تخيل* girl with hijan  style`);
             return;
         }
 
