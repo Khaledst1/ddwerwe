@@ -129,7 +129,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       break
     case 'pconly':
     case 'privateonly':
-      isAll = true
+      isAll = false
       if (!isROwner) {
         global.dfail('rowner', m, conn)
         throw false
@@ -141,7 +141,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       isAll = true
       if (!isROwner) {
         global.dfail('rowner', m, conn)
-        throw false
+        throw true
       }
       global.opts['gconly'] = isEnable
       break
