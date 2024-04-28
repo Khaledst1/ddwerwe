@@ -1,677 +1,490 @@
-import fetch from 'node-fetch'
-import fs from 'fs' 
-let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner, text }) => { 
-//try{
-let chat = global.db.data.chats[m.chat]
-let user = global.db.data.users[m.sender]
-let bot = global.db.data.settings[conn.user.jid] || {}
-let toUser = `${m.sender.split("@")[0]}`
-let aa = toUser + '@s.whatsapp.net'
-let titulo = [ 
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.welcome ? '✅' : '❌' : lenguajeGB.smsNoGg()}`, 
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.detect ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.autolevelup ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaOw() + ' ' + `${bot.restrict ? '✅' : '❌'}`,    
-lenguajeGB.smsParaOw() + ' ' + `${bot.antiCall ? '✅' : '❌'}`,
-lenguajeGB.smsParaOw() + ' ' + `${bot.antiSpam ? '✅' : '❌'}`,	
-lenguajeGB.smsParaOw() + ' ' + `${global.opts['self'] ? '❌' : '✅'}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.modoadmin ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaOw() + ' ' + `${global.opts['autoread'] ? '✅' : '❌'}`, 
-lenguajeGB.smsParaOw() + ' ' + `${bot.temporal ? '✅' : '❌'}`,      
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.stickers ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.autosticker ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.reaction ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.audios ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.modohorny ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antitoxic ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.antiver ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaAdYOw() + ' ' + `${m.isGroup ? chat.delete ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antifake ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,  
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiLink ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiLink2 ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiTiktok ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiYoutube ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiTelegram ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiFacebook ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,   
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiInstagram ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaAdmins() + ' ' + `${m.isGroup ? chat.antiTwitter ? '✅' : '❌' : lenguajeGB.smsNoGg()}`,    
-lenguajeGB.smsParaOw() + ' ' + `${global.opts['pconly'] ? '✅' : '❌'}`,  
-lenguajeGB.smsParaOw() + ' ' + `${global.opts['gconly'] ? '✅' : '❌'}`]
-let nombre = [ lenguajeGB.smsWel1(), lenguajeGB.smsDete1(), lenguajeGB.smsANivel1(), lenguajeGB.smsRestri1(), lenguajeGB.smsLlamar1(), lenguajeGB.smsAntiSp1(), lenguajeGB.smsModP1(), lenguajeGB.smsModAd1(), lenguajeGB.smsLect1(), lenguajeGB.smsTempo1(), lenguajeGB.smsStik1(), lenguajeGB.smsStickA1(), lenguajeGB.smsReacc1(), lenguajeGB.smsAudi1(), lenguajeGB.smsModHor1(), lenguajeGB.smsAntitoc1(), lenguajeGB.smsModOb1(), lenguajeGB.smsAntiEli1(), lenguajeGB.smsAntiInt1(), lenguajeGB.smsAntiE1(), lenguajeGB.smsAntiEE1(), lenguajeGB.smsAntiTT1(), lenguajeGB.smsAntiYT1(), lenguajeGB.smsAntiTEL1(), lenguajeGB.smsAntiFB1(),
-lenguajeGB.smsAntiIG1(), lenguajeGB.smsAntiTW1(), lenguajeGB.smsSOLOP1(), lenguajeGB.smsSOLOG1()]
-let descripción = [ lenguajeGB.smsWel2(), lenguajeGB.smsDete2(), lenguajeGB.smsANivel2(), lenguajeGB.smsRestri2(), lenguajeGB.smsLlamar2(), lenguajeGB.smsAntiSp2(), lenguajeGB.smsModP2(), lenguajeGB.smsModAd2(), lenguajeGB.smsLect2(), lenguajeGB.smsTempo2(), lenguajeGB.smsStik2(), lenguajeGB.smsStickA2(), lenguajeGB.smsReacc2(), lenguajeGB.smsAudi2(), lenguajeGB.smsModHor2(), lenguajeGB.smsAntitoc2(), lenguajeGB.smsModOb2(), lenguajeGB.smsAntiEli2(), lenguajeGB.smsAntiInt2(), lenguajeGB.smsAntiE2(), lenguajeGB.smsAntiEE2(), lenguajeGB.smsAntiTT2(), lenguajeGB.smsAntiYT2(), lenguajeGB.smsAntiTEL2(), lenguajeGB.smsAntiFB2(),
-lenguajeGB.smsAntiIG2(), lenguajeGB.smsAntiTW2(), lenguajeGB.smsSOLOP2(), lenguajeGB.smsSOLOG2()]
-let comando = [ "welcome", "detect", "autolevelup", "restrict", "anticall", "antispam", "public", "modoadmin", "autoread", "temporal", "stickers", "autosticker", "reaction", "audios", "modohorny", "antitoxic", "antiviewonce", "antidelete", "antifake", "antilink", "antilink2", "antitiktok", "antiyoutube", "antitelegram", "antifacebook",
-"antinstagram", "antitwitter", "pconly", "gconly"]
-let sections = Object.keys(titulo, nombre, descripción, comando).map((v, index) => ({ title: `${titulo[v]}`,
-rows: [{ title: `${nombre[v]} : ${command} ${comando[v]}`, description: `${1 + index}. ${descripción[v]}`, rowId: usedPrefix + command + ' ' + comando[v], }], }))
-let name = await conn.getName(m.sender)
-/*const listMessage = {
-text: `${lenguajeGB.smsConfi10()}`,
-footer: `╭━━━✦ *${lenguajeGB.smsConfi1()}* ✦━━━━⬣
-┃
-┃🌟 ${lenguajeGB.smsConfi2()} *${name}*
-┃
-${lenguajeGB.smsConfi3()}
-${lenguajeGB.smsConfi4()}
-┃
-${lenguajeGB.smsConfi5()}
-${lenguajeGB.smsConfi6()}
-${lenguajeGB.smsConfi7()}
-${lenguajeGB.smsConfi8()}
-${m.isGroup ? `┃` : `┃\n${lenguajeGB.smsConfi9()}`}
-╰━━━━━✦ *${vs}* ✦━━━━⬣
-${wm}`,
-title: null,
-buttonText: `⚙️ ${lenguajeGB.smsConfi1()} ⚙️`,
-sections }*/
-let isEnable = /true|enable|(turn)?on|1/i.test(command)
-let type = (args[0] || '').toLowerCase()
-let isAll = false, isUser = false
-switch (type) {
-case 'welcome': case 'bienvenida':
-if (!m.isGroup) {
-if (!isOwner) {
-global.dfail('group', m, conn)
-throw false
-}
-} else if (!isAdmin) {
-global.dfail('admin', m, conn)
-throw false
-}
-chat.welcome = isEnable
-break
-    
-case 'detect': case 'avisos':
-if (!m.isGroup) {
-if (!isOwner) {
-global.dfail('group', m, conn)
-throw false
-}
-} else if (!isAdmin) {
-global.dfail('admin', m, conn)
-throw false
-}
-chat.detect = isEnable
-break
-		
-case 'antidelete': case 'antieliminar': case 'delete':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.delete = isEnable
-break
-    
-case 'public': case 'publico':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-global.opts['self'] = !isEnable
-break
-    
-case 'antilink': case 'antienlace':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiLink = isEnable
-break
-    
-case 'antilink2': case 'antienlace2':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiLink2 = isEnable 
-break
-		
-case 'antitiktok': case 'antitk': case 'antitik':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiTiktok = isEnable 
-break
-		
-case 'antiyoutube': case 'antiyt':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiYoutube = isEnable 
-break
-		
-case 'antitelegram': case 'antitl': case 'antitele': case 'antitg': case 'antitel':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiTelegram = isEnable 
-break
-		
-case 'antifacebook': case 'antifb': case 'antifbook':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiFacebook = isEnable 
-break
-		
-case 'antiinstagram': case 'antinstagram': case 'antiig': case 'antig': case 'antiinsta': case 'antinsta':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiInstagram = isEnable 
-break
-		
-case 'antitwitter': case 'antitw': case 'antitwit': case 'antitwter': case 'antitwiter': case 'antix':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiTwitter = isEnable 
-break
-    
-case 'modohorny': case 'modocaliente': case 'modehorny':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.modohorny = isEnable          
-break
-    
-case 'stickers':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.stickers = isEnable          
-break
-    
-case 'game': case 'juegos': case 'fun':
+
+
+const handler = async (m, {conn, usedPrefix, command, args, isOwner, isAdmin, isROwner}) => {
+  const datas = global
+  const idioma = datas.db.data.users[m.sender].language
+  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
+  const tradutor = _translate.plugins.config_funciones
+
+
+const optionsFull = `_*${tradutor.texto1[0]}*_\n 
+
+${tradutor.texto1[1]}  | WELCOME"
+${tradutor.texto1[2]} ${usedPrefix + command} welcome
+${tradutor.texto1[3]}
+
+--------------------------------
+
+${tradutor.texto2[0]} | PUBLIC
+${tradutor.texto2[1]}* ${usedPrefix + command} public
+${tradutor.texto2[2]}
+${tradutor.texto2[3]}
+
+--------------------------------
+
+${tradutor.texto3[0]} | MODOHORNY
+${tradutor.texto3[1]} ${usedPrefix + command} modohorny
+${tradutor.texto3[2]}
+
+--------------------------------
+
+${tradutor.texto4[0]} | ANTILINK
+${tradutor.texto4[1]} ${usedPrefix + command} antilink
+${tradutor.texto4[2]}
+${tradutor.texto4[3]}
+
+--------------------------------
+
+${tradutor.texto5[0]} 🔗 | ANTILINK 2
+${tradutor.texto5[1]}  ${usedPrefix + command} antilink2
+${tradutor.texto5[2]}
+${tradutor.texto5[3]}
+
+--------------------------------
+
+${tradutor.texto6[0]} | DETECT
+${tradutor.texto6[1]} ${usedPrefix + command} detect
+${tradutor.texto6[2]}
+
+--------------------------------
+
+${tradutor.texto7[0]} | DETECT 2
+${tradutor.texto7[1]} ${usedPrefix + command} detect2
+${tradutor.texto7[2]}
+
+--------------------------------
+
+${tradutor.texto8[0]} RESTRICT
+${tradutor.texto8[1]} ${usedPrefix + command} restrict
+${tradutor.texto8[2]}
+${tradutor.texto8[3]}
+--------------------------------
+
+${tradutor.texto9[0]} | AUTOREAD
+${tradutor.texto9[1]} ${usedPrefix + command} autoread
+${tradutor.texto9[2]}
+${tradutor.texto9[3]}
+
+--------------------------------
+
+${tradutor.texto10[0]} | AUDIOS
+${tradutor.texto10[1]} ${usedPrefix + command} audios
+${tradutor.texto10[2]}
+
+--------------------------------
+
+${tradutor.texto11[0]} | AUTOSTICKER
+${tradutor.texto11[1]} ${usedPrefix + command} autosticker 
+${tradutor.texto11[2]}
+
+--------------------------------
+
+${tradutor.texto12[0]} | PCONLY
+${tradutor.texto12[1]} ${usedPrefix + command} pconly
+${tradutor.texto12[2]}
+${tradutor.texto12[3]}
+
+--------------------------------
+
+${tradutor.texto13[0]} | GCONLY
+${tradutor.texto13[1]} ${usedPrefix + command} gconly
+${tradutor.texto13[2]} 
+${tradutor.texto13[3]}
+
+--------------------------------
+
+${tradutor.texto14[0]} | ANTIVIEWONCE 
+${tradutor.texto14[1]} ${usedPrefix + command} antiviewonce
+${tradutor.texto14[2]}
+
+--------------------------------
+
+${tradutor.texto15[0]} | ANTILLAMADAS
+${tradutor.texto15[1]} ${usedPrefix + command} anticall
+${tradutor.texto15[2]} 
+${tradutor.texto15[3]}
+
+--------------------------------
+
+${tradutor.texto16[0]} | ANTITOXIC
+${tradutor.texto16[1]} ${usedPrefix + command} antitoxic
+${tradutor.texto16[2]}
+${tradutor.texto16[3]}
+
+--------------------------------
+
+${tradutor.texto17[0]} | ANTITRABAS
+${tradutor.texto17[1]}  ${usedPrefix + command} antitraba
+${tradutor.texto17[2]} 
+${tradutor.texto17[3]} 
+
+--------------------------------
+
+${tradutor.texto18[0]} | ANTIARABES
+${tradutor.texto18[1]} ${usedPrefix + command} antiarabes
+${tradutor.texto18[2]}
+${tradutor.texto18[3]}
+
+--------------------------------
+
+${tradutor.texto19[0]} | ANTIARABES 2
+${tradutor.texto19[1]}  ${usedPrefix + command} antiarabes2
+${tradutor.texto19[2]} 
+${tradutor.texto19[3]} 
+
+--------------------------------
+
+${tradutor.texto20[0]} | MODOADMIN
+${tradutor.texto20[1]} ${usedPrefix + command} modoadmin
+${tradutor.texto20[2]}
+
+--------------------------------
+
+${tradutor.texto21[0]} | SIMSIMI
+${tradutor.texto21[1]} ${usedPrefix + command} simsimi
+${tradutor.texto21[2]}
+
+--------------------------------
+
+${tradutor.texto22[0]} | ANTIDELETE
+${tradutor.texto22[1]} ${usedPrefix + command} antidelete
+${tradutor.texto22[2]}
+
+--------------------------------
+
+${tradutor.texto23[0]} | AUDIOS_BOT
+${tradutor.texto23[1]} ${usedPrefix + command} audios_bot
+${tradutor.texto23[2]}
+${tradutor.texto23[3]}
+
+--------------------------------
+
+${tradutor.texto24[0]} | MODOIA
+${tradutor.texto24[1]} ${usedPrefix + command} modoia
+${tradutor.texto24[2]}
+${tradutor.texto24[3]}
+
+--------------------------------
+
+${tradutor.texto25[0]} | ANTISPAM
+${tradutor.texto25[1]} ${usedPrefix + command} antispam
+${tradutor.texto25[2]}
+${tradutor.texto25[3]}
+
+--------------------------------
+
+${tradutor.texto26[0]} | MODEJADIBOT
+${tradutor.texto26[1]} ${usedPrefix + command} modejadibot
+${tradutor.texto26[2]} (${usedPrefix}serbot / ${usedPrefix}jadibot). 
+${tradutor.texto26[3]}
+
+--------------------------------
+
+${tradutor.texto27[0]} | ANTIPRIVADO
+${tradutor.texto27[1]} ${usedPrefix + command} antiprivado
+${tradutor.texto27[2]}
+${tradutor.texto27[3]}`.trim();
+
+  const isEnable = /true|enable|(turn)?on|1/i.test(command);
+  const chat = global.db.data.chats[m.chat];
+  const user = global.db.data.users[m.sender];
+  const bot = global.db.data.settings[conn.user.jid] || {};
+  const type = (args[0] || '').toLowerCase();
+  let isAll = false; const isUser = false;
+  switch (type) {
+    case 'welcome':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!(isAdmin || isOwner || isROwner)) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.welcome = isEnable;
+      break;
+    case 'detect':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.detect = isEnable;
+      break;
+    case 'detect2':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn);
+          throw false;
+        }
+      } else if (!isAdmin) {
+        global.dfail('admin', m, conn);
+        throw false;
+      }
+      chat.detect2 = isEnable;
+      break;
+    case 'simsimi':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.simi = isEnable;
+      break;
+    case 'antiporno':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiporno = isEnable;
+      break;
+    case 'delete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.delete = isEnable;
+      break;
+    case 'antidelete':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antidelete = isEnable;
+      break;
+    case 'public':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['self'] = !isEnable;
+      break;
+    case 'antilink':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiLink = isEnable;
+      break;
+    case 'antilink2':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiLink2 = isEnable;
+      break;
+    case 'antiviewonce':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiviewonce = isEnable;
+      break;
+    case 'modohorny':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.modohorny = isEnable;
+      break;
+    case 'modoadmin':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.modoadmin = isEnable;
+      break;
+    case 'autosticker':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.autosticker = isEnable;
+      break;
+    case 'audios':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.audios = isEnable;
+      break;
+    case 'restrict':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.restrict = isEnable;
+      break;
+    case 'audios_bot':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.audios_bot = isEnable;      
+      break;
+    case 'modoia':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.modoia = isEnable;      
+      break;      
+    case 'nyimak':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['nyimak'] = isEnable;
+      break;
+    case 'autoread':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      bot.autoread2 = isEnable;
+      //global.opts['autoread'] = isEnable;
+      break;
+    case 'pconly':
+    case 'privateonly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['pconly'] = isEnable;
+      break;
+    case 'gconly':
+    case 'grouponly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['gconly'] = isEnable;
+      break;
+    case 'swonly':
+    case 'statusonly':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      global.opts['swonly'] = isEnable;
+      break;
+    case 'anticall':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antiCall = isEnable;
+      break;
+    case 'antiprivado':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antiPrivate = isEnable;
+      break;
+    case 'modejadibot':
+      isAll = true;
+      if (!isROwner) {
+        global.dfail('rowner', m, conn);
+        throw false;
+      }
+      bot.modejadibot = isEnable;
+      break;
+    case 'antispam':
+      isAll = true;
+      if (!(isROwner || isOwner)) {
+        global.dfail('owner', m, conn);
+        throw false;
+      }
+      bot.antispam = isEnable;
+      break;
+    case 'antitoxic':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiToxic = isEnable;
+      break;
+      case 'game': case 'juegos': case 'fun': case 'ruleta':
 if (m.isGroup) {
 if (!(isAdmin || isOwner)) {
 global.dfail('admin', m, conn)
 throw false
 }}
 chat.game = isEnable          
-break
-    
-case 'ruleta': case 'game2':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.game2 = isEnable          
-break
-    
-case 'temporal':
-isAll = true
-if (!isOwner) {
-global.dfail('owner', m, conn)
-throw false
-}
-bot.temporal = isEnable
-break
-		
-case 'autolevelup': case 'autonivel': case 'nivelautomatico':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.autolevelup = isEnable          
-break
-    
-case 'autosticker':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.autosticker = isEnable          
-break
-    
-case 'reaction': case 'reaccion': case 'emojis': case 'antiemojis': case 'reacciones': case 'reaciones':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.reaction = isEnable          
-break
-		
-case 'antitoxic': case 'antitoxicos': case 'antimalos':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antitoxic = isEnable
-break
-    
-case 'audios':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.audios = isEnable          
-break
-    
-case 'antiver': case 'modover': case 'modoobservar': case 'modobservar': case 'antiviewonce':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiver = isEnable 
-break
-		
-case 'antiinternacional': case 'antinternacional': case 'antinternational': case 'antifake': case 'antifalsos': case 'antivirtuales': case 'antiextranjeros':		
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antifake = isEnable          
-break
-		
-case 'jadibot': case 'modojadibot': case 'serbot': case 'modoserbot': 
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-bot.jadibotmd = isEnable
-break 
-    
-case 'restrict': case 'restringir':
-isAll = true
-if (!isOwner) {
-global.dfail('owner', m, conn)
-throw false
-}
-bot.restrict = isEnable
-break
-
-case 'antiporn': case 'antiporno':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiPorn = isEnable          
-break
-    
-case 'nyimak':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-global.opts['nyimak'] = isEnable
-break
-    
-case 'autoread': case 'autovisto':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-bot.autoread2 = isEnable    
-global.opts['autoread'] = isEnable  
-break
-    
-case 'anticall': case 'antillamar':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-bot.antiCall = isEnable
-break
-		
-case 'antispam':
-isAll = true
-if (!isOwner) {
-global.dfail('owner', m, conn)
-throw false
-}
-bot.antiSpam = isEnable
-break
-
-case 'antispam2':
-isAll = true
-if (!isOwner) {
-global.dfail('owner', m, conn)
-throw false
-}
-bot.antiSpam2 = isEnable
-break
-
-case 'modoadmin': case 'soloadmin': case 'modeadmin':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.modoadmin = isEnable          
-break    
-   
-case 'pconly': case 'privateonly': case 'soloprivados':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-global.opts['pconly'] = isEnable
-break
-    
-case 'gconly': case 'grouponly': case 'sologrupos':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-global.opts['gconly'] = isEnable
-break
-case 'antiprivado': case 'antiprivate':
-case 'privado':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-bot.antiPrivate = isEnable
-break
-case 'antitrabas': case 'antitraba': case 'antilag':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.antiTraba = isEnable
-break
-case 'simi': case 'chatbot':
-if (m.isGroup) {
-if (!(isAdmin || isOwner)) {
-global.dfail('admin', m, conn)
-throw false
-}}
-chat.simi = isEnable
-break
-case 'modoia': case 'chatgpt': case 'ia':
-isAll = true;
-if (!isOwner) {
-global.dfail('owner', m, conn);
-throw false;
-}
-bot.modoia = isEnable;      
-break;      
-      
-case 'swonly': case 'statusonly':
-isAll = true
-if (!isROwner) {
-global.dfail('rowner', m, conn)
-throw false
-}
-global.opts['swonly'] = isEnable
-break
-default:
-if (!/[01]/.test(command)) return await conn.reply(m.chat, `\`${lenguajeGB.smsConfi10()}\`\n\n🌟 ${lenguajeGB.smsConfi2()} *@${toUser}*
-
-> ${lenguajeGB.smsConfi3()}
-> ${lenguajeGB.smsConfi4()}
-
-${lenguajeGB.smsConfi5()}
-${lenguajeGB.smsConfi6()}
-${lenguajeGB.smsConfi7()}
-${lenguajeGB.smsConfi8()}
-${m.isGroup ? `` : `${lenguajeGB.smsConfi9()}`}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.welcome ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} welcome
-✦ ${lenguajeGB.smsWel2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.detect ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} detec
-✦ ${lenguajeGB.smsDete2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()} ${m.isGroup ? chat.autolevelup ? '✅' : '❌' : lenguajeGB.smsNoGg()} 
-✦ ${usedPrefix + command} autolevelup
-✦ ${lenguajeGB.smsANivel2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.game ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} juegos
-✦ 👾 Activar / desactivar los Juegos
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.ruleta ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} game2
-✦ 👽 Activar / desactivar la ruletas rusa 
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${bot.restrict ? '✅' : '❌'}
-✦ ${usedPrefix + command} restrict
-✦ ${lenguajeGB.smsRestri2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${bot.antiPrivate ? '✅' : '❌'}
-✦ ${usedPrefix + command} antiprivado
-✦ Prohibido usar el bot en privado
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${bot.antiCall ? '✅' : '❌'}
-✦ ${usedPrefix + command} antiCall
-✦ ${lenguajeGB.smsLlamar2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${bot.antiSpam ? '✅' : '❌'}
-✦ ${usedPrefix + command} antiSpam
-✦ ${lenguajeGB.smsAntiSp2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${global.opts['self'] ? '❌' : '✅'}
-✦ ${usedPrefix + command} self
-✦ ${lenguajeGB.smsModP2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.modoadmin ? '✅' : '❌' : lenguajeGB.smsNoGg()} 
-✦ ${usedPrefix + command} modoadmin
-✦ ${lenguajeGB.smsModAd2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${global.opts['autoread'] ? '✅' : '❌'}
-✦ ${usedPrefix + command} autoread
-✦ ${lenguajeGB.smsLect1()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${bot.temporal ? '✅' : '❌'}
-✦ ${usedPrefix + command} temporal
-✦ ${lenguajeGB.smsTempo2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.stickers ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} stickers
-✦ ${lenguajeGB.smsStik1()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.autosticker ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} autosticker
-✦ ${lenguajeGB.smsStickA2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()} ${m.isGroup ? chat.reaction ? '✅' : '❌' : lenguajeGB.smsNoGg()}    
-✦ ${usedPrefix + command} reaction
-✦ ${lenguajeGB.smsReacc2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()} ${m.isGroup ? chat.audios ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} audios
-✦ ${lenguajeGB.smsAudi2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.modoia ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} chatgpt
-✦ Se activa el modo "Inteligencia Artificial" con ChatGPT en todos los chats privados.
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.simi ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} chatbot
-✦ El bot empezará interactúa con los usuarios del Grupo.
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antitoxic ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antitoxic
-✦ ${lenguajeGB.smsAntitoc2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()}  ${m.isGroup ? chat.modohorny ? '✅' : '❌' : lenguajeGB.smsNoGg()} 
-✦ ${usedPrefix + command} modocaliente
-✦ Activa o desactiva los comandos +18 en el grupo.
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()} ${m.isGroup ? chat.antiver ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiver
-✦ ${lenguajeGB.smsModOb2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdYOw()} ${m.isGroup ? chat.delete ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} delete
-✦ ${lenguajeGB.smsAntiEli2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antifake ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antifake
-✦ ${lenguajeGB.smsAntiInt2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiTraba ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antitraba
-✦ El Bot detecta textos largos que podrian ser virus y causar lag en el chat y elimina al usuario.
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiLink ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiLink
-✦ ${lenguajeGB.smsAntiE2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiLink2 ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiLink2
-✦ ${lenguajeGB.smsAntiEE2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiTiktok ? '✅' : '❌' : lenguajeGB.smsNoGg()} 
-✦ ${usedPrefix + command} antiTiktok
-✦ ${lenguajeGB.smsAntiTT2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiYoutube ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiYoutube
-✦ ${lenguajeGB.smsAntiYT2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiTelegram ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiTelegram
-✦ ${lenguajeGB.smsAntiTEL2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiFacebook ? '✅' : '❌' : lenguajeGB.smsNoGg()} 
-✦ ${usedPrefix + command} antiFacebook
-✦ ${lenguajeGB.smsAntiFB2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiInstagram ? '✅' : '❌' : lenguajeGB.smsNoGg()}
-✦ ${usedPrefix + command} antiInstagram
-✦ ${lenguajeGB.smsAntiIG2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaAdmins()} ${m.isGroup ? chat.antiTwitter ? '✅' : '❌' : lenguajeGB.smsNoGg()}   
-✦ ${usedPrefix + command} antiTwitter
-✦ ${lenguajeGB.smsAntiTW2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${global.opts['pconly'] ? '✅' : '❌'}
-✦ ${usedPrefix + command} pconly
-✦ ${lenguajeGB.smsSOLOP2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-✦ ${lenguajeGB.smsParaOw()} ${global.opts['gconly'] ? '✅' : '❌'}
-✦ ${usedPrefix + command} gconly
-✦ ${lenguajeGB.smsSOLOG2()}
-
-┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈
-
-${wm}`, fkontak, { mentions: [aa,] })
-//conn.sendMessage(m.chat, { text: texto }, { quoted: fkontak })
-//conn.sendMessage(m.chat, texto, {quoted: fkontak})	
-throw false
-}
-await conn.reply(m.chat, `${lenguajeGB['smsAvisoRG']()}ღ *_${lenguajeGB['smsMens1']()}_* *|* ${type} 
-ღ *_${lenguajeGB['smsMens2']()}_* *|* ${isEnable ? lenguajeGB.smsEncender() : lenguajeGB.smsApagar()} 
-ღ *_${lenguajeGB['smsMens3']()}_* *|* ${isAll ? lenguajeGB.smsMens4() : isUser ? '' : lenguajeGB.smsMens5()}`, fkontak, m)}	
-/*await conn.sendButton(m.chat, `${lenguajeGB['smsAvisoRG']()}ღ *_${lenguajeGB['smsMens1']()}_* *|* ${type} 
-ღ *_${lenguajeGB['smsMens2']()}_* *|* ${isEnable ? lenguajeGB.smsEncender() : lenguajeGB.smsApagar()} 
-ღ *_${lenguajeGB['smsMens3']()}_* *|* ${isAll ? lenguajeGB.smsMens4() : isUser ? '' : lenguajeGB.smsMens5()}`, wm, null, [[`${isEnable ? lenguajeGB.smsApagar() : lenguajeGB.smsEncender()}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], [lenguajeGB.smsConMenu(), '.menu']], fkontak, m)}*/
-handler.help = ['en', 'dis'].map(v => v + 'able <option>')
-handler.tags = ['group', 'owner']
-handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
-export default handler
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
+break;
+    case 'antitraba':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiTraba = isEnable;
+      break;
+    case 'antiarabes':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn); 
+          throw false;
+        }
+      }
+      chat.antiArab = isEnable;
+      break;
+    case 'antiarabes2':
+      if (m.isGroup) {
+        if (!(isAdmin || isROwner || isOwner)) {
+          global.dfail('admin', m, conn);
+          throw false;
+        }
+      }
+      chat.antiArab2 = isEnable;
+      break;
+    default:
+      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, {text: optionsFull}, {quoted: m});
+      throw false;
+  }
+  conn.sendMessage(m.chat, {text: `_*${tradutor.texto28[0]}*_\n\n*${tradutor.texto28[1]}* _${type}_ *fue* ${isEnable ? '_activada_' : '_desactivada_'} *${tradutor.texto28[2]}* ${isAll ? '_bot._' : isUser ? '' : '_chat._'}`}, {quoted: m});
+  //conn.sendMessage(m.chat, {text: `▢ *Opción:* ${type}\n\n▢ *Estado:* ${isEnable ? 'Activado' : 'Desactivado'}\n\n▢ *Para* ${isAll ? 'este bot' : isUser ? '' : 'este chat'}`}, {quoted: m});
+};
+handler.command = /^((en|dis)able|(tru|fals)e|(turn)?[01])$/i;
+export default handler;
