@@ -384,8 +384,8 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '*⦓          ⦓😶‍🌫️⦔          ⦔*\nالمجموعه *❤️ꪶ→ @subject*\nالرقم *🍀ꪶ→ @user*\n*😍ꪶ→مـرحـبـاً بـك فـي الــجروب نـورت*\n*💠ꪶ→ اقـرا الوصف*\n*⦓          ⦓😶‍🌫️⦔          ⦔';
-  conn.bye = '*⦓          ⦓👋🏻⦔          ⦔*\n*😏ꪶ→ @user*\n*ꪶ→ لا بأس لم يكن له وجود اساسا 🤣*\n*⦓          ⦓👋🏻⦔          ⦔*';
+  conn.welcome = '*⦓          ⦓𝑩𝑶𝑻 𝑨𝑳 𝑺𝑶𝑳𝑻𝑨𝑵⦔          ⦔*\nالمجموعه *👉🏻 @subject*\nالرقم *🍀 @user*\n*😍مـرحـبـاً بـك نـورت الجـروب*\n*💠ꪶ→ اقـرا الوصف*\n*⦓          ⦓😶‍🌫️⦔          ⦔*';
+  conn.bye = '*⦓          ⦓𝑩𝑶𝑻 𝑨𝑳 𝑺𝑶𝑳𝑻𝑨𝑵⦔          ⦔*\n*😏•👉🏻 @user*\n*ꪶ→ لا بأس لم يكن له وجود اساسا 🤣*\n*⦓          ⦓👋🏻⦔          ⦔*';
   conn.spromote = '*[ 📌 ] @user تمت ترقيته إلى المسؤول.*';
   conn.sdemote = '*[ 📌 ] @user تم تخفيض رتبته من المسؤول.*';
   conn.sDesc = '*[ 📌 ] تم تعديل وصف المجموعه.*';
