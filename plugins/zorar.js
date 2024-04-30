@@ -4,27 +4,27 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         message: {
           interactiveMessage: {
             header: {
-              title: 'الازرار'
+              title: 'اهلا بك في قائمه بوت السلطان⚙️'
             },
             body: {
-              text: 'تست'
+              text: 'قم بختيار الامر من القائمه'
             },
             nativeFlowMessage: {
               buttons: [
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'اضغط',
+                    title: 'القائمه',
                     sections: [
                       {
                         title: 'القائمة',
-                        highlight_label: 'تست',
+                        highlight_label: 'بوت السلطان',
                         rows: [
                           {
                             header: 'منشن',
                             title: 'منشن',
                             description: '',
-                            id: '.منشن'
+                            id: 'منشن.'
                           },
                                         {
                             header: 'الدعم',
