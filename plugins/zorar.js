@@ -21,8 +21,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
                         highlight_label: 'بوت السلطان',
                         rows: [
                           {
-                            header: 'الاوامر',
-                            title: 'يعطيك قائمه الاوامر',
+                            header: 'يعطيك قائمه الاوامر',
+                            title: '.الاوامر',
                             description: '',
                             id: '.الاوامر'
                           },
