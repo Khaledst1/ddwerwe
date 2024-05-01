@@ -74,6 +74,6 @@ title: '*﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*\n'*_مرحبا يا @${
 
   handler.help = ['info']
   handler.tags = ['main']
-  handler.command = ['qw','ty','er','youssef','ui','op']
+  handler.command = ['المهام','ty','er','youssef','ui','op']
 
   export default handler
