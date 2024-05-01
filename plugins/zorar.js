@@ -4,39 +4,33 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
         message: {
           interactiveMessage: {
             header: {
-              title: 'اهلا بك في قائمه بوت السلطان⚙️'
+              title: '*قـائـمـة الـاوامــر*'
             },
             body: {
-              text: 'قم بختيار الامر من القائمه'
+              text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
             },
             nativeFlowMessage: {
               buttons: [
                 {
                   name: 'single_select',
                   buttonParamsJson: JSON.stringify({
-                    title: 'القائمه',
+                    title: 'دوس هنا ',
                     sections: [
                       {
-                        title: 'القائمة',
-                        highlight_label: 'بوت السلطان',
+                        title: 'قوائم البوت',
+                        highlight_label: 'اختار',
                         rows: [
                           {
-                            header: 'يعطيك قائمه الاوامر',
-                            title: '.الاوامر',
+                            header: 'قسم الانمي',
+                            title: '.الانمي',
                             description: '',
-                            id: '.الاوامر'
-                          },
-                                        {
-                            header: 'الدعم',
-                            title: 'الدعم',
-                            description: '',
-                            id: '.الدعم'
+                            id: 'te'
                           },
                           {
-                            header: 'المطور',
-                            title: 'المطور',
+                            header: 'قسم الاوامر',
+                            title: '.المهام',
                             description: '',
-                            id: '.مطور'
+                            id: 'te'
                           }
                         ]
                       }
