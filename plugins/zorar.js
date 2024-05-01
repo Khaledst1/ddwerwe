@@ -5,14 +5,14 @@ viewOnceMessage: {
 message: {
 interactiveMessage: {
 header: {
-title: '*▫️اهلا, ${taguser}* اليك قائمه اوامر بوت السلطان
+title: '*اهلا ${taguser} اليك قائمه اوامر بوت السلطان*'
  },
  body: {
  text: '*افتح القائمة بواسطه الزر🔘*'
   },
   nativeFlowMessage: {
   buttons: [
-  {
+   {
   name: 'single_select',
   buttonParamsJson: JSON.stringify({
   title: '📝 القائمة 📝',
