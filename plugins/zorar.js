@@ -1,54 +1,67 @@
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    conn.relayMessage(m.chat, {
-      viewOnceMessage: {
-        message: {
-          interactiveMessage: {
-            header: {
-              title: '*قـائـمـة الـاوامــر*'
-            },
-            body: {
-              text: '🛡️ افتح القائمة بواسطة الزر\n⚡ لا تلعب كثير في القائمة'
-            },
-            nativeFlowMessage: {
-              buttons: [
-                {
-                  name: 'single_select',
-                  buttonParamsJson: JSON.stringify({
-                    title: 'دوس هنا ',
-                    sections: [
-                      {
-                        title: 'قوائم البوت',
-                        highlight_label: 'اختار',
-                        rows: [
-                          {
-                            header: 'قسم الانمي',
-                            title: '.الانمي',
-                            description: '',
-                            id: 'te'
-                          },
-                          {
-                            header: 'قسم الاوامر',
-                            title: '.المهام',
-                            description: '',
-                            id: '.المهام'
-                          }
-                        ]
-                      }
-                    ]
-                  }),
-                  messageParamsJson: ''
-                }
-              ]
-            }
-          }
-        }
-      }
-    }, {})
+let handler = async (m, { conn, args,
+usedPrefix, command }) => {
+conn.relayMessage(m.chat, {
+viewOnceMessage: {
+message: {
+interactiveMessage: {
+header: {
+title: '*⛩️ قائمة الأوامر ⛩️*'
+ },
+ body: {
+ text: '*افتح القائمة بواسطه الزر🔘*'
+  },
+  nativeFlowMessage: {
+  buttons: [
+  {
+  name: 'single_select',
+  buttonParamsJson: JSON.stringify({
+  title: '⛩️ القائمة ⛩️',
+  sections: [
+  {
+  title: 'قائمة الأوامر',
+  highlight_label: 'ON',
+  rows: [
+  {
+  header: 'المطور',
+  title: '.المطور',
+  description: '',
+  id: '.المطور'
+  },
+  {
+  header: 'السورس',
+  title: '.السورس',
+  description: '',
+  id: '.السورس'
+  },
+  {
+  header: 'كونان',
+  title: '.كونان',
+  description: '',
+  id: 'كونان'
+  },
+  {
+  header: 'اوامر',
+  title: '.اوامر',
+  description: '',
+  id: 'اوامر'
+  }
+  ]
+  }
+  ]
+  }),
+  messageParamsJson: ''
+  }
+  ]
+  }
+  }
+  }
+  }
+  }, {})
 
-}
+  }
 
-handler.help = ['info']
-handler.tags = ['main']
-handler.command = ['الازرار']
+  handler.help = ['info']
+  handler.tags = ['main']
+  handler.command = ['الازرار']
 
-export default handler
+  export default handler
