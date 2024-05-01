@@ -62,6 +62,6 @@ title: '*✨اهلا يا صديق اليك قائمه اوامر بوت الس�
 
   handler.help = ['info']
   handler.tags = ['main']
-  handler.command = ['الازرار']
+  handler.command = ['الازرار','زراير']
 
   export default handler
