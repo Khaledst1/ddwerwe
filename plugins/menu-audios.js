@@ -223,7 +223,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     conn.reply(m.chat, tradutor.texto2, m);
   }
 };
-handler.command = /^(مهام|قائمه|اوامر|الاوامر|أوامر|ألاوامر|menu|memuaudio|audios|keyaudio|keyaudios)$/i;
+handler.command = /^(مهام|keyaudio|krk|jrn|jdj|bjjk|jdkn|memuaudio|audios|keyaudio|keyaudios)$/i;
 handler.exp = 50;
 handler.fail = null;
 export default handler;
