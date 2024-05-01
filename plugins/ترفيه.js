@@ -67,7 +67,7 @@ let handler = m => m
  }  
   
  if (/^اي$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` خدتك عليه ✨🥹 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, ` ✨🥹 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
      
