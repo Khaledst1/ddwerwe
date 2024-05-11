@@ -45,7 +45,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *▫️هذا البوت صنع بواسطه يوسف السلطان انضم للقناة عبر الواتساب لمعرفه التحديثات القادمه*
 > *▫️https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*
 > *▫️مجموعه الدعم*
-> *▫️https://chat.whatsapp.com/CKX6KRTfg8iDTTwA4XCtLP*
+> *▫️https://chat.whatsapp.com/JwSTjeM8zk96j5sgcvW64C*
 
 > *▫️انستجرام*
 > *▫️https://instagram.com/youssef.alsoltan_*
