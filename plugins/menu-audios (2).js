@@ -198,6 +198,11 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *❗⇆ معلومات الـمطـور  ↯*
 > ❗ده  instagram.com/youssef.alsoltan_
 > 👾━━━حـقـوق الـمـطـور━━━👾
+
+> *مشاهدة سورس البوت*
+
+> *https://youtu.be/GJfIpa6I7Zo?si=kuFkNdr5JQLrXoI_*
+
   © *صنع في مصر*
 > *┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
 `.trim();
