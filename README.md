@@ -1,25 +1,25 @@
-# `𝙏𝙝𝙚 𝙢𝙚𝙜𝙤-𝙗𝙤𝙩` 
+# `𝙏𝙝𝙚 AL SOLTAN-BOT` 
 
 # `حقوقك في config.js وتعامل البوت حقك من الان` 
 <p align="center">
-<img src="https://telegra.ph/file/bda9ed97f962db2e7f154.jpg" alt="Mego-Bot-MD" width="900"/>
+<img src="[https://telegra.ph/file/bda9ed97f962db2e7f154.jpg]([https://telegra.ph/file/6c8064983cd7e01123262.jpg](https://telegra.ph/file/6c8064983cd7e01123262.jpg))" alt="By Youssef Al Soltan" width="900"/>
 </p>
 
 ------------------
-> **ملاحظة**: أنا "Mego"، تقاعدت من كل ما يتعلق بالبوت أو المواضيع المشابهة، لذا في مرحلة ما سيصبح قديمًا و/أو ستتوقف بعض الأوامر عن العمل.  أنا أقدر تفضيلك خلال الرحلة عبر عالم الروبوتات هذا.
+> **ملاحظة**: أنا "السلطان"، تقاعدت من كل ما يتعلق بالبوت أو المواضيع المشابهة، لذا في مرحلة ما سيصبح قديمًا و/أو ستتوقف بعض الأوامر عن العمل.  أنا أقدر تفضيلك خلال الرحلة عبر عالم الروبوتات هذا.
 
-> 𝙏𝙝𝙚𝙢𝙚𝙜𝙤-𝙗𝙤𝙩 يتم ترك الأمر في أيدي المتعاونين، وباعتباره الممثل الرئيسي 
+> دعم بوت السلطان يتم ترك الأمر في أيدي المتعاونين، وباعتباره الممثل الرئيسي 
 ------------------
 
 > اللغه الرئيسيه التي اشتغل عليها المطور هي *العربيه*
 
 ### `▢ الحسابات الرسمية`
 
-[ 🔗 ] https://atom.bio/mego51_51
+[ 🔗 ] [[https://atom.bio/mego51_51](https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M)])
 
 ### `▢ مجموعات الدعم (متوفرة)`
 
- <a href="https://chat.whatsapp.com/KSmyQMnG5kxF3bRJGgXVvW" target="blank"><img src="https://img.shields.io/badge/SUPPORT_GROUP_(EN)_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
+ <a href="[https://chat.whatsapp.com/KSmyQMnG5kxF3bRJGgXVvW](https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M)" target="blank"><img src="https://img.shields.io/badge/SUPPORT_GROUP_(EN)_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
 <a href="https://chat.whatsapp.com/GbsFSHXkLoUJ9JH7t8djAn" target="blank"><img src="https://img.shields.io/badge/SUPPORT_GROUP_(EN)_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 
@@ -30,7 +30,7 @@
  ### `▢رقم المطور الرسمي (نشط)`
 
 
-<a href="https://api.whatsapp.com/send/?phone=201012531172&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/BOT_OFICIAL_1_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="https://api.whatsapp.com/send/?phone=201277272498&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="https://img.shields.io/badge/BOT_OFICIAL_1_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
 <a href="https://api.whatsapp.com/send/?phone=201025663589&text=/estado&type=phone_number&app_absent=0" target="blank"><img src="[https://img.shields.io/badge/BOT_OFICIAL_2_(نشط)-25D366?style=for-the-badge&logo=whatsapp&logoColor=white](https://telegra.ph/file/bda9ed97f962db2e7f154.jpg)" />
 
