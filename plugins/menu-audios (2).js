@@ -44,7 +44,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *⟣┈https://chat.whatsapp.com/JwSTjeM8zk96j5sgcvW64C*
 
 > *⟣┈انستجرام*
-> *⟣┈https://instagram.com/youssef.alsoltan_*
+> *⟣┈https://www.instagram.com/w_xs.z?igsh=bzdoaWgzZXN4bTJh*
 
 > *⟣┈اذا كان يوجد اي خطا وتريد ابلاغ المطور استخدم امر*
 
@@ -198,7 +198,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
 > 👾┑━━━حـقـوق الـمـطـور━━━┍👾
 > *❗⇆ معلومات الـمطـور  ↯*
-> ❗ده  instagram.com/youssef.alsoltan_
+> ❗ده  https://www.instagram.com/w_xs.z?igsh=bzdoaWgzZXN4bTJh
 > 👾━━━حـقـوق الـمـطـور━━━👾
 
 > *مشاهدة سورس البوت*
