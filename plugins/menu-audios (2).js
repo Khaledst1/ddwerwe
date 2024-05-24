@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from  node-fetch ;
 
 
 
@@ -11,12 +11,12 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
   try {
     const pp = imagen4;
-    // let vn = './media/menu.mp3'
-    const img = './Menu2.jpg';
+    // let vn =  ./media/menu.mp3 
+    const img =  ./Menu2.jpg ;
     const d = new Date(new Date + 3600000);
-    const locale = 'ar';
-    const week = d.toLocaleDateString(locale, {weekday: 'long'});
-    const date = d.toLocaleDateString(locale, {day: 'numeric', month: 'long', year: 'numeric'});
+    const locale =  ar ;
+    const week = d.toLocaleDateString(locale, {weekday:  long });
+    const date = d.toLocaleDateString(locale, {day:  numeric , month:  long , year:  numeric });
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
     const user = global.db.data.users[m.sender];
@@ -25,8 +25,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const rtotalreg = Object.values(global.db.data.users).filter((user) => user.registered == true).length;
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
-    const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
-    const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
+    const taguser =  @  + m.sender.split( @s.whatsapp.net )[0];
+    const doc = [ pdf ,  zip ,  vnd.openxmlformats-officedocument.presentationml.presentation ,  vnd.openxmlformats-officedocument.spreadsheetml.sheet ,  vnd.openxmlformats-officedocument.wordprocessingml.document ];
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
 > *⟣┈اهلا, ${taguser}*
@@ -50,9 +50,151 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 
 > ﹝ . *بلاغ* ﹞
 
-
-
-اعمل منيو بقا يحب او قايمه+بحبك♥️
+> *﹝⟣┈┈┈⟢﹝👥﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الجـروبـات*👥✬⃝
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. لقبني*
+> *. لقب*
+> *. الالقاب*
+> *. طرد*
+> *. ضيف*
+> *. ترقية*
+> *. اعفاء*
+> *. حذف*
+> *. منشن*
+> *. مخفي*
+> *. المشرفين*
+> *. لمنشن*
+> *. بروفايل*
+> *. الجروب*
+> *. دعوه*
+> *. تغيير_اللينك*
+> *. لفل*
+> *. جروب*
+> *. الترحيب*
+> *. المغادره*
+> *. ايات*
+> *. جروب قفل  فتح*
+> *. خط*
+> *. توب*
+> *. لينك*
+> *. يومي*
+> *. الماس*
+> *. ترتيب_البنك*
+> *. شراء*
+> *. هجوم*
+> *﹝⟣┈┈┈⟢﹝📿﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الـديـني*✨✬⃝
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. آيه*
+> *. حديث*
+> *. دين*
+> *. قران*
+> *. الله*
+> *﹝⟣┈┈┈⟢﹝⚙️﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الـمـطور*🙎🏻✬⃝
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. ضيف_بريميام*
+> *. حذف_بريميام*
+> *. بان*
+> *. الغاء_البان*
+> *. اطفاء*
+> *. تفعيل*
+> *. المبندين*
+> *. إعادة*
+> *. اعادةتشغيل*
+> *. انضم*
+> *. ضيف_اكس_بي*
+> *. ضيف_جواهر*
+> *﹝⟣┈┈┈⟢﹝📁﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الـتنـزيلات و البحـث*📥✬⃝
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. انستغرام*
+> *. انستا*
+> *. خلفيات*
+> *. تيكتوك*
+> *. كلمات-اغنيه*
+> *. تيك*
+> *. شغل*
+> *. تيكتوك*
+> *. تويتر*
+> *. اغنية*
+> *. بحث*
+> *. فيديو*
+> *. تطبيق*
+> *. صوره*
+> *﹝⟣┈┈┈⟢﹝🕹️﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الـتـرفيـه*🎮✬⃝
+> ❍↜ *يـدعـم الجـروبـات*
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. اكس او*
+> *.جنية ملك او كتابة*
+> *.سلم_وثعبان*
+> *. تحدي*
+> *. لعبة*
+> *. صراحه*
+> *. بوت*
+> *. قتل*
+> *. فزوره*
+> *. تطقيم*
+> *. ايدت*
+> *. فكك*
+> *. علم*
+> *. اسئلني*
+> *. رياضه*
+> *. خمن*
+> *. شخصيه*
+> *. فيك*
+> *. ميمز*
+> *. اختبرني*
+> *. خروف*
+> *. احزر*
+> *. حرب*
+> *. اتحداك*
+> *. عين*
+> *. قلب*
+> *. تهكير*
+> *. لو*
+> *. ايموجي*
+> *. صداقه*
+> *. بيحبني*
+> *. بيكرهني*
+> *. حب*
+> *. حساب*
+> *. هل*
+> *. رتب*
+> *. ترجم*
+> *. اقتباس*
+> *. زواج*
+> *. انطق*
+> *. انطق2*
+> *. تاج*
+> *. حكمه*
+> *. سؤال*
+> *﹝⟣┈┈┈⟢﹝💡﹞⟣┈┈┈⟢﹞*
+> ❍↜ *قـسـم الـتحـويل*🛠️✬⃝
+> *﹝⟣┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
+> *. ملصق*
+> *. تخيل*
+> *. اتتب*
+> *. التعرف*
+> *. صورهai*
+> *. مطلوب*
+> *. رابطي*
+> *. جوده*
+> *. سرقة*
+> *. تصميم*
+> *. لوجو-ناروتو*
+> *. لفيديو*
+> *. لصورة*
+> *. لانمي*
+> *. تخيل*
+> *. مكس*
+> *. لجواهر*
+> *. ستك*
+> *. تليجراف*
+> *. لكرتون*
+> *. باركود*
 
 > 👾┑━━━حـقـوق الـمـطـور━━━┍👾
 > *❗⇆ معلومات الـمطـور  ↯*
@@ -67,13 +209,13 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *┈┈┈⟢﹝✨﹞⟣┈┈┈⟢﹞*
 `.trim();
     if (m.isGroup) {
-      // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
-      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
+      // await conn.sendFile(m.chat, vn,  menu.mp3 , null, m, true, { type:  audioMessage , ptt: true})
+      const fkontak2 = { key : { participants :  0@s.whatsapp.net ,  remoteJid :  status@broadcast ,  fromMe : false,  id :  Halo },  message : { contactMessage : { vcard : `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split( @ )[0]}:${m.sender.split( @ )[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}},  participant :  0@s.whatsapp.net };
+      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] +  @s.whatsapp.net )}, {quoted: fkontak2});
     } else {
-      // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
-      const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
-      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net')}, {quoted: fkontak2});
+      // await conn.sendFile(m.chat, vn,  menu.mp3 , null, m, true, { type:  audioMessage , ptt: true})
+      const fkontak2 = { key : { participants :  0@s.whatsapp.net ,  remoteJid :  status@broadcast ,  fromMe : false,  id :  Halo },  message : { contactMessage : { vcard : `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split( @ )[0]}:${m.sender.split( @ )[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}},  participant :  0@s.whatsapp.net };
+      conn.sendMessage(m.chat, {image: pp, caption: str.trim(), mentions: [...str.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] +  @s.whatsapp.net )}, {quoted: fkontak2});
     }
   } catch {
     conn.reply(m.chat, tradutor.texto2, m);
@@ -84,8 +226,8 @@ handler.exp = 50;
 handler.fail = null;
 export default handler;
 function clockString(ms) {
-  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
-  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
-  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
-  return [h, m, s].map((v) => v.toString().padStart(2, 0)).join(':');
+  const h = isNaN(ms) ?  --  : Math.floor(ms / 3600000);
+  const m = isNaN(ms) ?  --  : Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms) ?  --  : Math.floor(ms / 1000) % 60;
+  return [h, m, s].map((v) => v.toString().padStart(2, 0)).join( : );
 }
