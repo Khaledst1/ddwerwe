@@ -10,15 +10,15 @@ import moment from 'moment-timezone';
 global.botnumber = "*『🔥┇al soltan-bot』*"
 global.confirmCode = ""
 
-global.owner = [['201277272498', '- YoUsSeF Al SoLtAn -❦︎', true],
+global.owner = [['967775302218', '♡:ابوهايف', true],
 ];
 
-global.suittag = ['201277272498'];
-global.prems = ['201277272498'];
+global.suittag = ['967775302218'];
+global.prems = [''];
 
-global.packname = '☾︎ BOT AL SOLTAN 😶‍🌫️ ☽︎';
-global.author = 'By >> - YoUsSeF Al SoLtAn -';
-global.wm = 'By >> - YoUsSeF Al SoLtAn -';
+global.packname = '☾︎ابوهايف:♡☽︎';
+global.author = 'باتشيرا';
+global.wm = 'باتشيرا<ابوهايف';
 global.titulowm = '☾︎ BOT-ALSOLTAN ☽︎';
 global.titulowm2 = `☾︎  BOT-ALSOLTAN ☽︎`
 global.igfg = '☾︎  BOT-ALSOLTAN ☽︎';
@@ -50,7 +50,7 @@ global.mysticbot = 'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M';
 global.waitt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
 global.waittt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
 global.waitttt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
-global.nomorown = '201277272498';
+global.nomorown = '967775302218';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
 global.cmenub = '┊✦ ';
