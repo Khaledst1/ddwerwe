@@ -1,7 +1,7 @@
 import { createHash } from 'crypto'
 import PhoneNumber from 'awesome-phonenumber'
 import { canLevelUp, xpRange } from '../lib/levelling.js'
-//import db from '../lib/database.js'
+'//import db from '../lib/database.js'
 
 let handler = async (m, { conn, usedPrefix, command}) => {
 
