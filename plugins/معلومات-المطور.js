@@ -33,17 +33,17 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > 👋🏻 اهلا, ${taguser}*
 > *مرحبا , انا مطور بوت السلطان*
 
-> *▫️https://wa.me/+201277272498*
+> *▫️https://wa.me/+967775302218*
 > *﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*
 
 > *▫️هذا البوت صنع بواسطه يوسف السلطان انضم للقناة عبر الواتساب لمعرفه التحديثات القادمه*
 > *▫️https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*
 
 > *▫️مجموعه الدعم*
-> *▫️https://chat.whatsapp.com/CKX6KRTfg8iDTTwA4XCtLP*
+> *▫️https://chat.whatsapp.com/LFFLFVRwTezEIMs3b2hAHC*
 
 > *▫️انستجرام*
-> *▫️https://instagram.com/youssef.alsoltan_*
+> *▫️https://www.instagram.com/w_xs.z?igsh=bzdoaWgzZXN4bTJh*
 
 > *﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*`.trim();
     if (m.isGroup) {
