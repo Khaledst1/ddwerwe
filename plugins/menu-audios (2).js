@@ -1,4 +1,8 @@
 import fetch from  node-fetch ;
+
+
+
+
 const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
   const datas = global
   const idioma = datas.db.data.users[m.sender].language
@@ -6,7 +10,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
   const tradutor = _translate.plugins.menu_audios
 
   try {
-    const pp = /imagen4;
+    const pp = imagen4;
     // let vn =  ./media/menu.mp3 
     const img =  ./Menu2.jpg ;
     const d = new Date(new Date + 3600000);
