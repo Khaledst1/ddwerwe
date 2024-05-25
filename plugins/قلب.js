@@ -11,7 +11,7 @@ const handler = async (m, { conn, command, text }) => {
   const getRandomMessage = (messages) => messages[Math.floor(Math.random() * messages.length)];
   const loveMessage = isHighLove ? getRandomMessage(loveMessages) : getRandomMessage(notSoHighLoveMessages);
   const response =`
-    > *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M
+    > *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g
   `
   async function loading() {
 var hawemod = [
@@ -20,7 +20,7 @@ var hawemod = [
   "انك ",
   "شخص",
   "عظيم",
-  "مطور بوت السلطان",
+  "مطور بوت باتشيرا",
   "يحبك",
   "💜",
   "🖤",
@@ -34,7 +34,7 @@ var hawemod = [
                 "💝",
                   "💟",
                     "♥️",
-                      "> *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M"
+                      "> *لا تبخل في الانضمام في قناه الواتساب*   https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g"
 ]
    let { key } = await conn.sendMessage(m.chat, {text: `*❮ ⏳ ┇ جـاري تـنـفـيـذ أمـر قـلـب ❯*`, mentions: conn.parseMention(response)}, {quoted: m})
  for (let i = 0; i < hawemod.length; i++) {
