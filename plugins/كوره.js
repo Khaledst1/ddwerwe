@@ -9,15 +9,14 @@ let handler = async (m, { conn, command, usedPrefix }) => {
     }
     let src = await (await fetch('https://raw.githubusercontent.com/Khaledst1/-/main/Bot-AlSoltan1.json')).json()
   let json = src[Math.floor(Math.random() * src.length)]
-    let caption = `*· • • ━━ ⌝🐉⌞ ━━ • • ·*
+    let caption = `*· • • ━━ ⌝🍷⌞ ━━ • • ·*
 *${command.toUpperCase()}*
 *🜋↫╎السـؤال ✍🏻⇜『من الاعب ال بالصورة』*
   *🜋↫╎الـوقـت⏳↞ ${(timeout / 1000).toFixed(2)} ┇*
-  *استخدم .انسحب للأنسحاب*
   *🜋↫╎الـجـائزة💰↞ ${poin} نقاط┇*
-∞┇━━━ •🐉• ━━━┇∞
+∞┇━━━ •🍷• ━━━┇∞
 *✠ ~تــ✍︎ــوقــيــع ↯:~*
-『بوت السلطان』
+『بوت ابوهايف:♡』
      `.trim()
     conn.tebakbendera[id] = [
         await conn.sendFile(m.chat, json.img, '', caption, m),
@@ -28,7 +27,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         }, timeout)
     ]
 }
-handler.help = ['كوره']
+handler.help = ['كوره' 'لاعب']
 handler.tags = ['fun']
 handler.command = /^كوره/i
 
