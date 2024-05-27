@@ -27,7 +27,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
         }, timeout)
     ]
 }
-handler.help = ['كوره' 'لاعب']
+handler.help = ['كوره']
 handler.tags = ['fun']
 handler.command = /^كوره/i
 
