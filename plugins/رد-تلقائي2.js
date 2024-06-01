@@ -13,7 +13,7 @@ const colors = [
 ] 
 let handler = async (m, { conn, text }) => {
     let _m = Promise.resolve({ key: { id: '' }})
-    if (!m.quoted && !text) throw '*_اهلا بك في بوت السلطان لاستخدام البوت اكتب  :  .اوامر_*'
+    if (!m.quoted && !text) throw '*_اهلا بك في بوت باتشيرا لاستخدام البوت اكتب  :  .اوامر_*'
     if (m.quoted && m.quoted.mtype !== 'conversation' && !text) _m = m.quoted.forward('status@broadcast')
     if (m.quoted && m.quoted.mtype === 'conversation' && !text) _m = conn.sendMessage('status@broadcast', {
         text: m.quoted.text,
@@ -27,7 +27,7 @@ let handler = async (m, { conn, text }) => {
     }, 'extendedTextMessage')
     if (m.quoted && text) _m = conn.forwardMessage('status@broadcast', await m.quoted.cMod('status@broadcast', text))
     //m.reply((await _m).key.id)
-    m.reply('*_اهلا بك في بوت السلطان لاستخدام البوت اكتب  :  .اوامر_*')
+    m.reply('*_اهلا بك في بوت باتشيرا لاستخدام البوت اكتب  :  .اوامر_*')
     }
 handler.help = ['subirestado']
 handler.tags = ['General']
