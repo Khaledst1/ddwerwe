@@ -53,7 +53,7 @@ let handler = async (m) => {
         let randomIndex = Math.floor(Math.random() * deathReasons.length);
         let randomDeathReason = deathReasons[randomIndex];
 
-        m.reply(`*❆━━━═⏣⊰🦇⊱⏣═━━━❆*\n\n🦇⤺┇ *تاريخ الوفاة:* *${randomDay}-${randomMonth}-${randomYear}*\n\n*السبب:* \n*${randomDeathReason}*\n\n*❆━━━═⏣⊰🦇⊱⏣═━━━❆*`);
+        m.reply(`*﹝❒═════﹝🍷﹞═════❒﹞*\n\n🍷⤺┇ *تاريخ الوفاة:* *${randomDay}-${randomMonth}-${randomYear}*\n\n*السبب:* \n*${randomDeathReason}*\n\n*﹝❒═════﹝🍷﹞═════❒﹞*`);
     } catch (error) {
         console.error('Error generating random death date:', error);
         m.reply('حدث خطأ أثناء توليد تاريخ الوفاة العشوائي. يرجى المحاولة مرة أخرى.');
