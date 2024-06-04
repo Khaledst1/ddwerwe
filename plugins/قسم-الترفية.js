@@ -49,6 +49,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. فزوره*
 > *. تطقيم*
 > *. ايدت*
+> *. عمري*
+> *. وفاتي*
 > *. فكك*
 > *. علم*
 > *. اسئلني*
