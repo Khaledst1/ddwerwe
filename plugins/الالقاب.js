@@ -76,7 +76,7 @@ let handler = async function (msg, {
             });
             if (existingNickname) {
                 const takenBy = await _.getName(existingNickname.userId + "@s.whatsapp.net");
-                msg.reply("*⌘¦الـلـقـب* " + nickname + "*مـأخـوذ بـواسـطـة :*" + takenBy);
+                msg.reply("*⌘¦الـلـقـب* " + nickuser + "*مـأخـوذ بـواسـطـة :*" + takenBy);
             } else {
                 await madara.findOneAndUpdate({
                     userId: mentionedUser,
