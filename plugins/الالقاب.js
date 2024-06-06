@@ -36,7 +36,7 @@ let handler = async function (msg, {
                 data.forEach((item, index) => {
                     list += index + 1 + " - " + item.madara + "\n";
                 });
-                msg.reply("*⌘¦عـدد الـمـسـجـلـيـن" + data.length + "¦🍷⃝|*\n *☾اسـتـخـدم .لقب وجـنـبـه الـلـقب المُـراد رقـمـه لـجـلـب رقـمه☽*\n\n*⌘¦الألـقـاب الـمـسـجـلـة:*\n\n" + list);
+                msg.reply("*⌘¦عـدد الـمـسـجـلـيـن" + data.length + "¦🍷⃝|*\n *☽اسـتـخـدم .لقب وجـنـبـه الـلـقب المُـراد رقـمـه لـجـلـب رقـمه☾*\n\n*⌘¦الألـقـاب الـمـسـجـلـة:*\n\n" + list);
             }
         } else if (command === "تسجيل") {
             if (!msg.isGroup) {
@@ -76,7 +76,7 @@ let handler = async function (msg, {
             });
             if (existingNickname) {
                 const takenBy = await _.getName(existingNickname.userId + "@s.whatsapp.net");
-                msg.reply("*⌘¦الـلـقـب* " + nickuser + "*مـأخـوذ بـواسـطـة :*" + takenBy);
+                msg.reply("*⌘¦الـلـقـب* " + nickname + "*مـأخـوذ بـواسـطـة :*" + @user);
             } else {
                 await madara.findOneAndUpdate({
                     userId: mentionedUser,
