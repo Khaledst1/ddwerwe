@@ -1,1 +1,169 @@
-const _0x8b17b=_0x23fa;(function(_0x34f5ce,_0x4e7bc3){const _0x156038=_0x23fa,_0x4cd514=_0x34f5ce();while(!![]){try{const _0x5e8983=parseInt(_0x156038(0x143))/0x1+parseInt(_0x156038(0x13a))/0x2+parseInt(_0x156038(0x172))/0x3*(parseInt(_0x156038(0x135))/0x4)+parseInt(_0x156038(0x156))/0x5+parseInt(_0x156038(0x140))/0x6+parseInt(_0x156038(0x134))/0x7*(-parseInt(_0x156038(0x149))/0x8)+-parseInt(_0x156038(0x13b))/0x9;if(_0x5e8983===_0x4e7bc3)break;else _0x4cd514['push'](_0x4cd514['shift']());}catch(_0x2e4554){_0x4cd514['push'](_0x4cd514['shift']());}}}(_0x1193,0x34e6c));function _0x1193(){const _0x41a975=['getName','لقب','log','tags','1846626Hdgjuk','تسجيل','userId','344475GbzPfU','اكتب\x20لقب\x20للتحقق\x20اذا\x20كان\x20ماخوذ\x20او\x20لا','forEach','@s.whatsapp.net','اكتب\x20اللقب\x20الذي\x20تريد\x20حذفه','الألقاب','281272FRQoOK','length','لقبه','\x20بنجاح\x20','┇\x20لم\x20يتم\x20تسجيلك\x20بعد','┇\x20لقبه\x20هو\x20:\x20','split','حدث\x20خطأ\x20أثناء\x20جلب\x20لقبك','mongodb+srv://itachi3mk:mypassis1199@cluster0.zzyxjo3.mongodb.net/?retryWrites=true&w=majority','connect','\x20اللقب\x20','هذا\x20الأمر\x20يعمل\x20فقط\x20في\x20المجموعات','chat','505610iARINC','catch','لقبي','replace','filter','Connected\x20to\x20MongoDB','حذف_لقب','slice','error','Error\x20fetching\x20user\x27s\x20nickname:','BK9','\x0a\x0a\x20┇الألقـاب\x20المـسـجـلـة:\x0a\x0a','mentionedJid','bk9','trim','Schema','┇\x20تم\x20حذف\x20اللقب\x20','test','┇\x20اللقب\x20','┇\x20لقبك\x20هو\x20:\x20','┇\x20لم\x20يتم\x20تسجيله\x20بعد','sender','isGroup','command','\x20بنجاح','find','هذا\x20الأمر\x20لمشرفين\x20المجموعه\x20فقط','Error\x20connecting\x20to\x20MongoDB:','648957rkzJZL','findOne','28OnHzag','4vFUoXV','┇عـدد\x20الألقـاب\x20المـسـجـلـة:\x20','\x20ماخوذ\x20من\x20طرف\x20@','join','reply','385560YIuWUz','7246323OVZSrl'];_0x1193=function(){return _0x41a975;};return _0x1193();}import _0x3fccce from'mongoose';const uri=_0x8b17b(0x151);_0x3fccce[_0x8b17b(0x152)](uri,{'useNewUrlParser':!![],'useUnifiedTopology':!![]})['then'](()=>console[_0x8b17b(0x13e)](_0x8b17b(0x15b)))[_0x8b17b(0x157)](_0x5aa051=>console[_0x8b17b(0x15e)](_0x8b17b(0x171),_0x5aa051));const bk9Schema=new _0x3fccce[(_0x8b17b(0x165))]({'groupId':String,'userId':String,'bk9':String}),BK9=_0x3fccce['model'](_0x8b17b(0x160),bk9Schema);let handler=async function(_0x157be0,{conn:_0x272d34,text:_0x543831,command:_0x2b56b7,isAdmin:_0x2cdea2}){const _0x48d61c=_0x8b17b;try{if(_0x2b56b7==='الألقاب'){if(!_0x157be0['isGroup']){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x154));return;}if(!_0x2cdea2){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x170));return;}const _0x4f510b=await BK9[_0x48d61c(0x16f)]({'groupId':_0x157be0[_0x48d61c(0x155)]});if(_0x4f510b[_0x48d61c(0x14a)]===0x0)_0x157be0[_0x48d61c(0x139)]('\x20لا\x20يـوجـد\x20ألـقـاب\x20مـسـجـلـة\x20حـالـيـا\x20┇');else{let _0x11033c='';_0x4f510b[_0x48d61c(0x145)]((_0x1c6ae9,_0x3cca43)=>{const _0x2c15c5=_0x48d61c;_0x11033c+=_0x3cca43+0x1+'\x20-\x20'+_0x1c6ae9[_0x2c15c5(0x163)]+'\x0a';}),_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x136)+_0x4f510b[_0x48d61c(0x14a)]+_0x48d61c(0x161)+_0x11033c);}}else{if(_0x2b56b7==='تسجيل'){if(!_0x157be0[_0x48d61c(0x16c)]){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x154));return;}if(!_0x2cdea2){_0x157be0[_0x48d61c(0x139)]('هذا\x20الأمر\x20لمشرفين\x20المجموعه\x20فقط');return;}if(!_0x157be0['mentionedJid']||!_0x543831||_0x543831[_0x48d61c(0x164)]()===''){_0x157be0['reply']('مثال:\x0a\x20.تسجيل\x20@العضو\x20هارلي\x20لايت');return;}const _0x44e2ed=_0x157be0[_0x48d61c(0x162)][0x0][_0x48d61c(0x159)](_0x48d61c(0x146),''),_0x482ad1=_0x543831[_0x48d61c(0x164)]()[_0x48d61c(0x14f)]('\x20')[_0x48d61c(0x15d)](0x1)[_0x48d61c(0x15a)](_0x10f9ea=>_0x10f9ea[_0x48d61c(0x164)]()!==''),_0x1db9c6=_0x482ad1[_0x48d61c(0x138)]('\x20');if(!/\S/[_0x48d61c(0x167)](_0x1db9c6)){_0x157be0[_0x48d61c(0x139)]('مثال:\x0a\x20.تسجيل\x20@العضو\x20هارلي\x20لايت');return;}const _0x40840b=await BK9[_0x48d61c(0x173)]({'bk9':_0x1db9c6,'groupId':_0x157be0[_0x48d61c(0x155)]});if(_0x40840b){const _0x5ee98c=await _0x272d34[_0x48d61c(0x13c)](_0x40840b[_0x48d61c(0x142)]+_0x48d61c(0x146));_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x168)+_0x1db9c6+_0x48d61c(0x137)+_0x5ee98c);}else await BK9['findOneAndUpdate']({'userId':_0x44e2ed,'groupId':_0x157be0[_0x48d61c(0x155)]},{'bk9':_0x1db9c6},{'upsert':!![]}),_0x157be0['reply']('┇\x20تم\x20تسجيله\x20بلقب\x20'+_0x1db9c6+_0x48d61c(0x14c));}else{if(_0x2b56b7===_0x48d61c(0x15c)){if(!_0x157be0[_0x48d61c(0x16c)]){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x154));return;}if(!_0x2cdea2){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x170));return;}if(!_0x543831||_0x543831[_0x48d61c(0x164)]()===''){_0x157be0['reply'](_0x48d61c(0x147));return;}const _0x478cf2=_0x543831[_0x48d61c(0x164)](),_0x2e6ab5=await BK9['deleteOne']({'bk9':_0x478cf2,'groupId':_0x157be0[_0x48d61c(0x155)]});_0x2e6ab5['deletedCount']>0x0?_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x166)+_0x478cf2+_0x48d61c(0x16e)):_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x153)+_0x478cf2+'\x20غير\x20مسجل\x20لاحد\x20اساسا');}else{if(_0x2b56b7===_0x48d61c(0x158))try{const _0x3650e3=_0x157be0[_0x48d61c(0x16b)][_0x48d61c(0x14f)]('@')[0x0],_0x60e2bf=await BK9['findOne']({'userId':_0x3650e3,'groupId':_0x157be0[_0x48d61c(0x155)]});_0x60e2bf&&_0x60e2bf[_0x48d61c(0x163)]?_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x169)+_0x60e2bf[_0x48d61c(0x163)]):_0x157be0['reply'](_0x48d61c(0x14d));}catch(_0x27f43f){console[_0x48d61c(0x15e)](_0x48d61c(0x15f),_0x27f43f),_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x150));}else{if(_0x2b56b7==='لقبه'&&_0x157be0[_0x48d61c(0x162)]){if(!_0x157be0[_0x48d61c(0x162)]||_0x157be0[_0x48d61c(0x162)][_0x48d61c(0x14a)]===0x0){_0x157be0[_0x48d61c(0x139)]('منشن\x20احد');return;}const _0x2eb85e=_0x157be0[_0x48d61c(0x162)][0x0][_0x48d61c(0x159)](_0x48d61c(0x146),''),_0x244a3=await BK9[_0x48d61c(0x173)]({'userId':_0x2eb85e,'groupId':_0x157be0['chat']});if(_0x244a3){const _0x3c8162=await _0x272d34['getName'](_0x2eb85e+'@s.whatsapp.net');_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x14e)+_0x244a3[_0x48d61c(0x163)]);}else _0x157be0['reply'](_0x48d61c(0x16a));}else{if(_0x2b56b7===_0x48d61c(0x13d)){if(!_0x543831||_0x543831[_0x48d61c(0x164)]()===''){_0x157be0[_0x48d61c(0x139)](_0x48d61c(0x144));return;}const _0x59e837=_0x543831[_0x48d61c(0x164)](),_0x17aad6=await BK9[_0x48d61c(0x173)]({'bk9':_0x59e837,'groupId':_0x157be0[_0x48d61c(0x155)]});if(_0x17aad6){const _0x4e457d=await _0x272d34[_0x48d61c(0x13c)](_0x17aad6['userId'][_0x48d61c(0x14f)]('@')[0x0]);_0x157be0[_0x48d61c(0x139)]('┇\x20اللقب\x20'+_0x59e837+'\x20ماخوذ\x20من\x20طرف\x20'+_0x4e457d);}else _0x157be0[_0x48d61c(0x139)](_0x48d61c(0x168)+_0x59e837+'\x20متوفر');}else{}}}}}}}catch(_0x306fed){console[_0x48d61c(0x15e)]('خطأ',_0x306fed);}};function _0x23fa(_0x29c145,_0x174398){const _0x119361=_0x1193();return _0x23fa=function(_0x23fab2,_0x32863f){_0x23fab2=_0x23fab2-0x134;let _0xbe24b4=_0x119361[_0x23fab2];return _0xbe24b4;},_0x23fa(_0x29c145,_0x174398);}handler[_0x8b17b(0x16d)]=[_0x8b17b(0x148),_0x8b17b(0x141),_0x8b17b(0x158),_0x8b17b(0x14b),_0x8b17b(0x15c),'لقب'],handler[_0x8b17b(0x13f)]=['BK9'];export default handler;
+import mongoose from "mongoose";
+const uri = "mongodb+srv://itachi3mk:mypassis1199@cluster0.zzyxjo3.mongodb.net/?retryWrites=true&w=majority";
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log("Connected to MongoDB")).catch(err => console.error("Error connecting to MongoDB:", err));
+const madaraSchema = new mongoose.Schema({
+    groupId: String,
+    userId: String,
+    madara: String
+});
+const madara = mongoose.model("madara", madaraSchema);
+let handler = async function (msg, {
+    conn: _,
+    text,
+    command,
+    isAdmin
+}) {
+    try {
+        if (command === "الألقاب") {
+            if (!msg.isGroup) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـجـمـوعـات فـقـط┃🛑❯*");
+                return;
+            }
+            if (!isAdmin) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـشـرفـيـن فـقـط┃🛑❯*");
+                return;
+            }
+            const data = await madara.find({
+                groupId: msg.chat
+            });
+            if (data.length === 0) {
+                msg.reply("*❐┃لا يـوجـد الـقـاب مـسـجـلـة بـعـد┃🛑❯*");
+            } else {
+                let list = "";
+                data.forEach((item, index) => {
+                    list += index + 1 + " - " + item.madara + "\n";
+                });
+                msg.reply("*❐┃عـدد الـمـسـجـلـيـن" + data.length + "┃🔢 ❯*\n *〘اسـتـخـدم .لقب وجـنـبـه الـلـقب المُـراد رقـمـه لـجـلـب رقـمـه〙*\n\n*〄╎الألـقـاب الـمـسـجـلـة:*\n\n" + list);
+            }
+        } else if (command === "تسجيل") {
+            if (!msg.isGroup) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـجـمـوعـات فـقـط┃🛑❯*");
+                return;
+            }
+            if (!isAdmin) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـشـرفـيـن فـقـط┃🛑❯*");
+                return;
+            }
+            if (!msg.mentionedJid || !text || text.trim() === "") {
+                msg.reply(`*❐═━━━═╊⊰♦️⊱╉═━━━═❐*
+*❐┃اسـتـخـدام خـاطـئ┃🛑❯*
+*『حـط الامـر مـع مـنـشـن شـخـص مـع الـلـقب』*
+*↞┇ مـثـال ↞.تسجيل @العضو مادارا*
+*❐═━━━═╊⊰♦️⊱╉═━━━═❐*
+╎𝐌𝐀𝐃𝐀𝐑𝐀 𝐁𝐎𝐓╎`);
+                return;
+            }
+          
+            const mentionedUser = msg.mentionedJid[0].replace("@s.whatsapp.net", "");
+            const nicknames = text.trim().split(" ").slice(1).filter(item => item.trim() !== "");
+            const nickname = nicknames.join(" ");
+            if (!/\S/.test(nickname)) {
+                msg.reply(`*❐═━━━═╊⊰♦️⊱╉═━━━═❐*
+*❐┃اسـتـخـدام خـاطـئ┃🛑❯*
+*『حـط الامـر مـع مـنـشـن شـخـص مـع الـلـقب』*
+*↞┇ مـثـال ↞.تسجيل @العضو مادارا*
+*❐═━━━═╊⊰♦️⊱╉═━━━═❐*
+*╎𝐌𝐀𝐃𝐀𝐑𝐀 𝐁𝐎𝐓╎*`);
+                return;
+            }
+          
+            const existingNickname = await madara.findOne({
+                madara: nickname,
+                groupId: msg.chat
+            });
+            if (existingNickname) {
+                const takenBy = await _.getName(existingNickname.userId + "@s.whatsapp.net");
+                msg.reply("*〄╎الـلـقـب* " + nickname + "*مـأخـوذ بـواسـطـة :*" + takenBy);
+            } else {
+                await madara.findOneAndUpdate({
+                    userId: mentionedUser,
+                    groupId: msg.chat
+                }, {
+                    madara: nickname
+                }, {
+                    upsert: true
+                });
+                msg.reply("*〄╎تـم تـسـجـيـلـه بـلـقـب* " + nickname + " *بـنـجـاح ✅* ");
+            }
+        } else if (command === "حذف_لقب") {
+            if (!msg.isGroup) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـجـمـوعـات فـقـط┃🛑❯*");
+                return;
+            }
+            if (!isAdmin) {
+                msg.reply("*❐┃هـذا الأمـر لـلـمـشـرفـيـن فـقـط┃🛑❯*");
+                return;
+            }
+            if (!text || text.trim() === "") {
+                msg.reply("*❐┃يـجـب كـتـابـة اسـم الـلـقـب جـنـب الأمـر لـحـذفـه┃🛑*❯");
+                return;
+            }
+            const nicknameToDelete = text.trim();
+            const deletedResult = await madara.deleteOne({
+                madara: nicknameToDelete,
+                groupId: msg.chat
+            });
+            if (deletedResult.deletedCount > 0) {
+                msg.reply("*〄╎تـم حـذف لـقـب* " + nicknameToDelete + " *بـنـجـاح ✅* ");
+            } else {
+                msg.reply("*〄╎الـلـقـب* " + nicknameToDelete + " *غـيـر مـأخـوذ أصـلاً* ");
+            }
+        } else if (command === "لقبي") {
+            try {
+                const senderId = msg.sender.split("@")[0];
+                const userNickname = await madara.findOne({
+                    userId: senderId,
+                    groupId: msg.chat
+                });
+                if (userNickname && userNickname.madara) {
+                    msg.reply("*〄╎لـقـبـك هـو :* " + userNickname.madara);
+                } else {
+                    msg.reply("*〄╎لـم يـتـم تـسـجـيـلـك أصـلاً*");
+                }
+            } catch (error) {
+                console.error("Error fetching user's nickname:", error);
+                msg.reply("*❐┃عـذرا. هـنـاك خـطـئ┃❌ ❯*");
+            }
+        } else if (command === "لقبه" && msg.mentionedJid) {
+            if (!msg.mentionedJid || msg.mentionedJid.length === 0) {
+                msg.reply("*❐┃يـجـب كـتـابـة الأمـر وجـنـبـه مـنـشـن الـشـخـص الـمُـراد مـعـرفـة لـقـبـه┃🛑*❯");
+                return;
+            }
+            const userToCheck = msg.mentionedJid[0].replace("@s.whatsapp.net", "");
+            const userNickname = await madara.findOne({
+                userId: userToCheck,
+                groupId: msg.chat
+            });
+            if (userNickname) {
+                const userNicknameText = await _.getName(userToCheck + "@s.whatsapp.net");
+                msg.reply("*〄╎لـقـبـه هـو :* " + userNickname.madara);
+            } else {
+                msg.reply("*〄╎لـم يـتـم تـسـجـيـلـه أصـلاً*");
+            }
+        } else if (command === "لقب") {
+            if (!text || text.trim() === "") {
+                msg.reply("*❐┃يـجـب كـتـابـة الأمـر وجـنـبـه الـلـقـب لـمـعـرفـة اذا كـان أحـدٌ قـد أخـذهُ أو لا┃🛑❯*");
+                return;
+            }
+            const nicknameToCheck = text.trim();
+            const nicknameData = await madara.findOne({
+                madara: nicknameToCheck,
+                groupId: msg.chat
+            });
+            if (nicknameData) {
+                const userTakingTheNickname = await _.getName(nicknameData.userId.split("@")[0]);
+                msg.reply("*〄╎الـلـقـب* " + nicknameToCheck + " *مـأخـوذ مـن:* " + userTakingTheNickname);
+            } else {
+                msg.reply("*〄╎الـلـقـب* " + nicknameToCheck + " *مـتـوفـر (غـيـر مـأخـوذ)*");
+            }
+        } else {}
+    } catch (err) {
+        console.error("خطأ", err);
+    }
+};
+handler.command = ["الألقاب", "تسجيل", "لقبي", "لقبه", "حذف_لقب", "لقب"];
+handler.tags = ["Madara"];
+export default handler;
