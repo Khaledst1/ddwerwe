@@ -29,15 +29,15 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
     const document = doc[Math.floor(Math.random() * doc.length)];
     const str = `
-> *﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*
+> ﹝❒═════﹝🍷﹞═════❒﹞*
 > 👋🏻 اهلا, ${taguser}*
-> *مرحبا , انا مطور بوت السلطان*
+> *مرحبا , انا مطور بوت باتشيرا*
 
 > *▫️https://wa.me/+967775302218*
-> *﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*
+> *﹝❒═════﹝🍷﹞═════❒﹞*
 
 > *▫️هذا البوت صنع بواسطه يوسف السلطان انضم للقناة عبر الواتساب لمعرفه التحديثات القادمه*
-> *▫️https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*
+> *▫️https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g*
 
 > *▫️مجموعه الدعم*
 > *▫️https://chat.whatsapp.com/LFFLFVRwTezEIMs3b2hAHC*
@@ -45,7 +45,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *▫️انستجرام*
 > *▫️https://www.instagram.com/w_xs.z?igsh=bzdoaWgzZXN4bTJh*
 
-> *﹝⟣┈┈┈⟢﹝🍁﹞⟣┈┈┈⟢﹞*`.trim();
+> *﹝❒═════﹝🍷﹞═════❒﹞*`.trim();
     if (m.isGroup) {
       // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
       const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
