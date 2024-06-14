@@ -11,6 +11,6 @@ mentions: [a, b]
 })}
 handler.help = ['formarpareja']
 handler.tags = ['main', 'fun']
-handler.command = ['قتل','موت']
+handler.command = ['قتل','ذبح']
 handler.group = true
 export default handler
