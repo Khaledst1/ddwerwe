@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
 > *https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g*`;
     
 
-    conn.sendFile(m.chat, 'https://telegra.ph/file/6337fbd4db67f08d79b8a.png', 'video.mp4', message, m);
+    conn.sendFile(m.chat, 'https://telegra.ph/file/9ea7c13e92000839267ab.jpg', 'video.mp4', message, m);
 };
 
 handler.customPrefix = /^(bot|بوت)$/i;
