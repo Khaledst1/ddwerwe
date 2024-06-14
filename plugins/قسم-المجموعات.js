@@ -41,6 +41,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 ❍↜ *قـسـم الجـروبـات*👥✬⃝
 *﹝❒═════﹝🍷﹞═════❒﹞*
 > *. القاب-الاعضاء*
+> *. زيارة*
+> *. دائم*
 > *. طرد*
 > *. طرد-الكل*
 > *. ضيف*
@@ -70,6 +72,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. ترتيب_البنك*
 > *. شراء*
 > *. هجوم*
+> *. التوقيت*
 *﹝❒═════﹝🍷﹞═════❒﹞*`.trim();
     if (m.isGroup) {
       // await conn.sendFile(m.chat, vn, 'menu.mp3', null, m, true, { type: 'audioMessage', ptt: true})
