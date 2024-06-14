@@ -48,9 +48,10 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 *﹝❒═════﹝🍷﹞═════❒﹞*
 > *. القاب-الاعضاء*
 > *. طرد*
+> *. طرد-الكل*
 > *. ضيف*
 > *. ترقية*
-> *. اعفاء*
+> *. خفض*
 > *. حذف*
 > *. منشن*
 > *. مخفي*
@@ -65,7 +66,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. الترحيب*
 > *. المغادره*
 > *. ايات*
-> *. جروب قفل  فتح*
+> *. جروب قفل*
+> *. جروب فتح*
 > *. خط*
 > *. توب*
 > *. لينك*
@@ -81,6 +83,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. حديث*
 > *. دين*
 > *. قران*
+> *. سوره*
+> *. تلاوة*
 > *. الله*
 *﹝❒═════﹝⚙️﹞═════❒﹞*
 ❍↜ *قـسـم الـمـطور* 🙎🏻✬⃝
@@ -118,7 +122,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 ❍↜ *قـسـم الـتـرفيـه*🎮✬⃝
 ❍↜ *يـدعـم الجـروبـات*
 *﹝❒═════﹝🍷﹞═════❒﹞*
-> *. اكس او*
+> *.اكس*
 > *.جنية ملك او كتابة*
 > *.سلم_وثعبان*
 > *.تحدي*
@@ -127,6 +131,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *.عمري*
 > *.وفاتي*
 > *.بوت*
+> *.باتشيرا*
 > *.قتل*
 > *.فزوره*
 > *.تطقيم*
@@ -205,7 +210,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
     conn.reply(m.chat, tradutor.texto2, m);
   }
 };
-handler.command = /^(قسم-الجروبات|keyaudio|krk|jrn|jdj|bjjk|jdkn|memuaudio|audios|keyaudio|keyaudios)$/i;
+handler.command = /^(كل-الاوامر|keyaudio|krk|jrn|jdj|bjjk|jdkn|memuaudio|audios|keyaudio|keyaudios)$/i;
 handler.exp = 50;
 handler.fail = null;
 export default handler;
