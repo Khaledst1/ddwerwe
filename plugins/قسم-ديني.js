@@ -44,6 +44,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. حديث*
 > *. دين*
 > *. قران*
+> *. تلاوة*
+> *. سوره*
 > *. الله*
 > *﹝❒═════﹝🍷﹞═════❒﹞*`.trim();
     if (m.isGroup) {
