@@ -44,8 +44,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. طرد*
 > *. طرد-الكل*
 > *. ضيف*
-> *. ترقية*
-> *. اعفاء*
+> *. ترقيه*
+> *. خفض*
 > *. حذف*
 > *. منشن*
 > *. مخفي*
@@ -60,7 +60,8 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. الترحيب*
 > *. المغادره*
 > *. ايات*
-> *. جروب قفل  فتح*
+> *. جروب قفل*
+> *. جروب فتح
 > *. خط*
 > *. توب*
 > *. لينك*
