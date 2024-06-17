@@ -386,7 +386,7 @@ global.reloadHandler = async function(restatConn) {
 
   conn.welcome = '*﹝❒═════﹝🍷﹞═════❒﹞*\nالمجموعه *👈🏻 @subject*\nالرقم *🍀 @user*\n*مـرحـبـاً بـك نـورت الجـروب😍*\n*★→ اقـرا الوصف*\n*﹝❒═════﹝🍷﹞═════❒﹞*';
   conn.bye = '*﹝❒═════﹝🍷﹞═════❒﹞*\n*@user*\n*باي باي تطلع يجي غيرك*\n*﹝❒═════﹝🍷﹞═════❒﹞*';
-  conn.spromote = '*[🍷] @user تمت ترقيته إلى المسؤول.*';
+  conn.spromote = '*[🍷] @user تمت ترقيته إلى المسؤول. بواسطة @sender*';
   conn.sdemote = '*[🍷] @user تم تخفيض رتبته من المسؤول.*';
   conn.sDesc = '*[🍷] تم تعديل وصف المجموعه.*';
   conn.sSubject = '*[🍷] تم تغيير اسم المجموعة.*';
