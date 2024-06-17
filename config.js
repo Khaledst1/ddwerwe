@@ -7,7 +7,7 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 import moment from 'moment-timezone';
 
-global.botnumber = "*『🔥┇al soltan-bot』*"
+global.botnumber = "*『🔥┇𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇』*"
 global.confirmCode = ""
 
 global.owner = [['967775302218', '♡:ابوهايف', true],
@@ -19,17 +19,16 @@ global.prems = [''];
 global.packname = '☾︎ابوهايف:♡☽︎';
 global.author = 'باتشيرا';
 global.wm = 'باتشيرا<ابوهايف';
-global.titulowm = '☾︎ BOT-ALSOLTAN ☽︎';
-global.titulowm2 = `☾︎  BOT-ALSOLTAN ☽︎`
-global.igfg = '☾︎  BOT-ALSOLTAN ☽︎';
-global.wait = '*[ ⏳ ] انتظر جاري التحميل *...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
-
+global.titulowm = '☾︎ 𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇 ☽︎';
+global.titulowm2 = `☾︎  𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇 ☽︎`
+global.igfg = '☾︎  𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇 ☽︎';
+global.wait = '*[🍷] انتظر جاري التحميل* ...\n\n*https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g*';
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
 global.imagen2 = fs.readFileSync('./src/nuevobot.jpg');
 global.imagen3 = fs.readFileSync('./src/Pre Bot Publi.png');
-global.imagen4 = fs.readFileSync('./Menu.png');
+global.imagen4 = fs.readFileSync('./Menu2.jpg');
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
-global.imagen6 = fs.readFileSync('./Menu3.png');
+global.imagen6 = fs.readFileSync('./Menu2.jpg');
 
 global.mods = [];
 
@@ -42,14 +41,14 @@ global.mes = d.toLocaleDateString('ar', {month: 'long'});
 global.año = d.toLocaleDateString('ar', {year: 'numeric'});
 global.tiempo = d.toLocaleString('ar-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
-global.wm2 = `${dia} ${fecha}\n☾︎ BOT-ALSOLTAN ☽︎`;
-global.gt = '☾︎ BOT-ALSOLTAN ☽︎';
-global.mysticbot = '☾︎ BOT-ALSOLTAN ☽︎';
-global.md = 'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M';
-global.mysticbot = 'https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M';
-global.waitt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
-global.waittt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
-global.waitttt = '*[ ⏳ ] انتظر جاري التحميل*...\n\n*https://whatsapp.com/channel/0029VaL2bnW0rGiPZq8B5S2M*';
+global.wm2 = `${dia} ${fecha}\n☾︎𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇☽︎`;
+global.gt = '☾︎𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇☽︎';
+global.mysticbot = '☾︎𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇☽︎';
+global.md = 'https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g';
+global.mysticbot = 'https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g';
+global.waitt = '*[🍷] انتظر جاري التحميل* ...\n\nhttps://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g';
+global.waittt = '*[🍷] انتظر جاري التحميل* ...\n\nhttps://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g';
+global.waitttt = '*[🍷] انتظر جاري التحميل* ...\n\nhttps://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g';
 global.nomorown = '967775302218';
 global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 global.cmenut = '❖––––––『';
