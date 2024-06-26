@@ -46,6 +46,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. صراحه*
 > *. بوت*
 > *. باتشيرا*
+> *. دحيح*
 > *. قتل*
 > *. فزوره*
 > *. تطقيم*
@@ -84,6 +85,7 @@ const handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, is
 > *. زواج*
 > *. انطق*
 > *. رونالدو*
+> *. ميسي*
 > *. تاج*
 > *. حكمه*
 > *. سؤال*
