@@ -19,10 +19,10 @@ const handler = async (m, { conn, usedPrefix, command }) => {
     message: {
         interactiveMessage: proto.Message.InteractiveMessage.create({
           body: proto.Message.InteractiveMessage.Body.create({
-            text: ""
+            text: "𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴 𝐵𝛩𝑇"
           }),
           footer: proto.Message.InteractiveMessage.Footer.create({
-            text: "𝒁𝒆𝒛𝒐 𝑩𝒐𝒕"
+            text: "𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴 𝐵𝛩𝑇"
           }),
           header: proto.Message.InteractiveMessage.Header.create({
             title: "*suiiiiiii*",
