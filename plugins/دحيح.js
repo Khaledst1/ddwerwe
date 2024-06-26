@@ -1,5 +1,3 @@
-نص الملف دحيح.js:
-
 import _0x3ec5fb from 'node-fetch';
 import _0xdcffbe from '../lib/uploadImage.js';
 let handler = async (_0x4f9075, {
