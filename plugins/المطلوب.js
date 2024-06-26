@@ -12,7 +12,7 @@ let handler = async (m) => {
   m.reply(wait)
   let link = await (isTele ? uploadImage : uploadImage)(media);
   let lr = (`https://api.popcat.xyz/wanted?image=${link}`)
-  conn.sendFile(m.chat, lr, 'wanted.png', `*😉┇بوت السلطان*`, m)
+  conn.sendFile(m.chat, lr, 'wanted.png', `*🍷┇بوت باتشيرا*`, m)
 }
 handler.help = ['wanted']
 handler.tags = ['meme']
