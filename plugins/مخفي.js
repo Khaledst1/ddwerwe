@@ -1,90 +1,46 @@
-import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
-import uploadFile from '../lib/uploadFile.js'
+import {generateWAMessageFromContent} from '@whiskeysockets/baileys';
+import * as fs from 'fs';
+// Para configurar o idioma, na raiz do projeto altere o arquivo config.json
+// Para configurar el idioma, en la raíz del proyecto, modifique el archivo config.json.
+// To set the language, in the root of the project, modify the config.json file.
 
-let handler = async (m, { conn, text, participants }) => {
-    // Extract user IDs and decode them
-    let users = participants.map(u => conn.decodeJid(u.id))
+const handler = async (m, {conn, text, participants, isOwner, isAdmin}) => {
+  try {
+    const users = participants.map((u) => conn.decodeJid(u.id));
+    const q = m.quoted ? m.quoted : m || m.text || m.sender;
+    const c = m.quoted ? await m.getQuotedObj() : m.msg || m.text || m.sender;
+    const msg = conn.cMod(m.chat, generateWAMessageFromContent(m.chat, {[m.quoted ? q.mtype : 'extendedTextMessage']: m.quoted ? c.message[q.mtype] : {text: '' || c}}, {quoted: m, userJid: conn.user.id}), text || q.text, conn.user.jid, {mentions: users});
+    await conn.relayMessage(m.chat, msg.message, {messageId: msg.key.id});
+  } catch {
+    /**
+[ By @NeKosmic || https://github.com/NeKosmic/ ]
+**/
 
-    // Handle quoted message if present
-    let q = m.quoted ? m.quoted : m
-    let c = m.quoted ? await m.getQuotedObj() : m
-    let messageType = m.quoted ? q.mtype : 'extendedTextMessage'
-    let messageContent = m.quoted ? c.message[q.mtype] ?? {} : { text: c }
-
-    // Determine the sender
-    let who = m.quoted ? m.quoted.sender : m.mentionedJid[0] || m.fromMe ? conn.user.jid : m.sender
-
-    // Validate user in the database
-    if (!(who in global.db.data.users)) throw `✳️ لم يتم العثور على المستخدم في قاعدة البيانات`
-
-    // Retrieve the user's name
-    let { name } = global.db.data.users[who]
-
-    // Create a fake contact message
-    global.Zoro = {
-        key: {
-            fromMe: false,
-            participant: `0@s.whatsapp.net`,
-            remoteJid: 'status@broadcast'
-        },
-        message: {
-            contactMessage: {
-                displayName: `${name}`,
-                vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:${name}\nTEL:${m.sender.split('@')[0]}\nEND:VCARD`
-            }
-        }
-    }
-
-    // Ensure text is not empty
-    let finalText = text || q.text
-
-    // Handle media messages
-    if (messageType === 'imageMessage' || messageType === 'videoMessage') {
-        let media = await q.download()
-        let link = await uploadFile(media)
-        await conn.sendMessage(
-            m.chat,
-            {
-                [messageType === 'imageMessage' ? 'image' : 'video']: { url: link },
-                caption: finalText,
-                contextInfo: {
-                    mentionedJid: users,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '0029VaL2bnW0rGiPZq8B5S2M@newsletter',
-                        newsletterName: global.author,
-                        serverMessageId: -1
-                    }
-                }
-            },
-            { quoted: global.Zoro }
-        )
+    const users = participants.map((u) => conn.decodeJid(u.id));
+    const quoted = m.quoted ? m.quoted : m;
+    const mime = (quoted.msg || quoted).mimetype || '';
+    const isMedia = /image|video|sticker|audio/.test(mime);
+    const more = String.fromCharCode(8206);
+    const masss = more.repeat(850);
+    const htextos = `${text ? text : '*صلى على النبي ي حوب 🧞*'}`;
+    if ((isMedia && quoted.mtype === 'imageMessage') && htextos) {
+      var mediax = await quoted.download?.();
+      conn.sendMessage(m.chat, {image: mediax, mentions: users, caption: htextos, mentions: users}, {quoted: m});
+    } else if ((isMedia && quoted.mtype === 'videoMessage') && htextos) {
+      var mediax = await quoted.download?.();
+      conn.sendMessage(m.chat, {video: mediax, mentions: users, mimetype: 'video/mp4', caption: htextos}, {quoted: m});
+    } else if ((isMedia && quoted.mtype === 'audioMessage') && htextos) {
+      var mediax = await quoted.download?.();
+      conn.sendMessage(m.chat, {audio: mediax, mentions: users, mimetype: 'audio/mpeg', fileName: `Hidetag.mp3`}, {quoted: m});
+    } else if ((isMedia && quoted.mtype === 'stickerMessage') && htextos) {
+      var mediax = await quoted.download?.();
+      conn.sendMessage(m.chat, {sticker: mediax, mentions: users}, {quoted: m});
     } else {
-        // Handle text messages
-        await conn.sendMessage(
-            m.chat,
-            { 
-                text: finalText,
-                contextInfo: {
-                    mentionedJid: users,
-                    isForwarded: true,
-                    forwardedNewsletterMessageInfo: {
-                        newsletterJid: '0029VaL2bnW0rGiPZq8B5S2M@newsletter',
-                        newsletterName: global.author,
-                        serverMessageId: -1
-                    }
-                }
-            },
-            { quoted: global.Zoro }
-        )
+      await conn.relayMessage(m.chat, {extendedTextMessage: {text: `${masss}\n${htextos}\n`, ...{contextInfo: {mentionedJid: users, externalAdReply: {thumbnail: imagen1, sourceUrl: 'https://github.com/BrunoSobrino/TheMystic-Bot-MD'}}}}}, {});
     }
-}
-
-handler.help = ['مخفي']
-handler.tags = ['group']
-handler.command = /^(مخفي|وهمي)$/i
-handler.group = true
-handler.admin = true
-handler.botAdmin = true
-
-export default handler
+  }
+};
+handler.command = /^(مخفي)$/i;
+handler.group = true;
+handler.admin = true;
+export default handler;
