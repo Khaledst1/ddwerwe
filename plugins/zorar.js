@@ -1,148 +1,90 @@
-let handler = async (m, { conn, args,
-usedPrefix, command }) => {
-const taguser = '@' + m.sender.split("@s.whatsapp.net")[0];
-conn.relayMessage(m.chat, {
-viewOnceMessage: {
-message: {
-interactiveMessage: {
-header: {
-title: `*﹝❒═════﹝🍷﹞═════❒﹞*\n *اهلا* 👋🏻 『 ${m.pushName} 』 \n *• اسم البوت: بوت باتشيرا*\n *• اسم المطور: ابوهايف:♡*\n *• وَنَجّنَا بِرَحْمَتِكَ مِنَ القوم الكافرين*\n`
-          },
-          body: {
-            text: ' *`افتح القائمة بواسطه الزر`🔘*\n*اليك قائمه بقسم الاوامر وقسم المعلومات*📜\n*﹝❒═════﹝🍷﹞═════❒﹞*\n\n> *Copyright© 2024*.'
-          },
-  nativeFlowMessage: {
-  buttons: [
-   {
-  name: 'single_select',
-  buttonParamsJson: JSON.stringify({
-  title: '🍷اخـتر القـسـم🍷',
-  sections: [
-  {
-  title: 'قسم الاوامر',
-  highlight_label: 'بوت باتشيرا',
-  rows: [
-  {
-  header: 'يعطيك قسم اوامر الجروب🗣️',
-  title: 'قـسـم الجـروبـات👥✬⃝',
-  description: '',
-  id: '.قسم-الجروبات'
-  },
-  {
-  header: 'يعطيك قسم اوامر التنزيلات📤',
-  title: 'قـسـم الـتنـزيلات📥✬⃝',
-  description: '',
-  id: '.قسم-التنزيلات'
-  },
-  {
-   header: 'يعطيك قسم اوامر الترفيه🛸',
-  title: 'قـسـم الـتـرفيـه🎮✬⃝',
-  description: '',
-  id: '.قسم-الترفيه'
-  },
-  {
-    header: 'يعطيك قسم اوامر التحويل🛠️',
-  title: 'قـسـم الـتحـويل🛠️✬⃝',
-  description: '',
-  id: '.قسم-التحويل'
-  },
-  {
-  header: 'يعطيك قسم اوامر الدين والأسلام👳🏻‍♂️',
-  title: 'قـسـم الـديـني✨✬⃝',
-  description: '',
-  id: '.قسم-ديني'
-  },
-  {
-  header: 'يعطيك قسم اوامر المطور⚙️',
-  title: ' قـسـم الـمـطور🙎🏻✬⃝',
-  description: '',
-  id: '.قسم-المطور'
-  },
-   {
-    header: 'يعطيك قسم اوامر الألقاب🖊️',
-  title: ' قـسـم الألقاب📕✬⃝',
-  description: '',
-  id: '.القاب-الاعضاء'
-  },
-   {
-  header: 'يعطيك قـسم كل الاوامر🍷⃝',
-  title: 'كل-الاوامر🍷⃝',
-  description: '',
-  id: '.كل-الاوامر'
-  }
-  ]
-  }
-  ]
-  }),
-  messageParamsJson: ''
-  }, 
-  {
-                                name: "cta_url",
-                buttonParamsJson: JSON.stringify({
-                  display_text: "قنـاة الـواتـساب📣",
-                  url: "https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g",
-                  merchant_url: "https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g"
-                })
-              },
-              // Adding new button here
-              {
-                name: "cta_url",
-                buttonParamsJson: JSON.stringify({
-                  display_text: "مشاهده البوت🎦",
-                  url: "https://youtu.be/-XdmFcY3zQI?si=bzJfbQGwjUk-4rZO",
-                  merchant_url: "https://youtu.be/-XdmFcY3zQI?si=bzJfbQGwjUk-4rZO"
-                })
-              },
-              // Adding new single_select option here
-              {
-                name: 'single_select',
-                buttonParamsJson: JSON.stringify({
-                  title: '🔎معلومات البوت🔎',
-                  sections: [
-                    {
-                      title: '📜معلومات عن البوت📜',
-                      highlight_label: 'ابوهايف:♡',
-                      rows: [
+import { prepareWAMessageMedia, generateWAMessageFromContent, getDevice } from '@whiskeysockets/baileys';
+
+const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
+    try {
+        const device = await getDevice(m.key.id);
+        const mentionId = m.key.participant || m.key.remoteJid;
+
+        if (device !== 'desktop' && device !== 'web') { // Changed || to &&
+            m.react('🗃️');
+
+            // Prepare video message
+            var joanimiVideo = await prepareWAMessageMedia({ video: { url: 'https://telegra.ph/file/f91e49e29a58a7a98e365.jpg' } }, { upload: conn.waUploadToServer });
+
+            // Get current date and time
+            const currentDate = new Date().toLocaleDateString('en-US');
+            const currentTime = new Date().toLocaleTimeString('en-US');
+
+            // Construct interactive message
+            const interactiveMessage = {
+                body: { text: '' }, // Adjust as needed
+                footer: { text: `*𝑀𝑉𝑅𝛩-𝐵𝛩𝑇-𝑀𝐷*` },
+                header: {
+                    title: `*┏╼╃✦⊰⟦𝙼𝚅𝚁𝙾-𝙱𝙾𝚃⟧⊱✦╄╾┓*\n\n*◞❐نورت يا حب بوت مارو✨🫦*\n\n*◞❐ تفضل القائمة يا  :* @${mentionId.split('@')[0]}\n\n*◞❐اسم البوت : بوت مـارو*\n\n*◞❐موقع التنصيب : heroku*\n\n*◞❐البوت يعمل في الخاص والجروبات*\n\n*◞❐يمنع شتم البوت*\n\n*┗╼╃✦⊰⟦𝙼𝚅𝚁𝙾-𝙱𝙾𝚃⟧⊱✦╄╾┛*`,
+                    subtitle: `Date: ${currentDate}\nTime: ${currentTime}`, // Display current date and time
+                    hasMediaAttachment: true,
+                    videoMessage: joanimiVideo.videoMessage,
+                },
+                nativeFlowMessage: {
+                    buttons: [
                         {
-                          header: 'صانع البوت👤',
-                          title: 'الـمطور👾',
-                          description: 'ابوهايف:♡',
-                          id: '.المطور'
-                         },
-                        {
-                         header: 'خصوصيه استخدام البوت❔❕',
-                          title: 'الاسـتخدام📜',
-                          description: '',
-                          id: '.الاستخدام'
-                        },
-                       {
-                          header: 'ابلاغ او ارسال رساله للمطور💭',
-                          title: 'طـلـب ابـلاغ📨',
-                          description: '',
-                          id: '.بلاغ'
+                            name: 'single_select',
+                            buttonParamsJson: JSON.stringify({
+                                title: '【..≼قـائـمـة الاوامـر≽..】',
+                                sections: [
+                                    {
+                                        title: 'List',
+                                        highlight_label: '',
+                                        rows: [
+                                            {
+                                                header: '【..≼قــســم الجروبات≽..】',
+                                                title: '𝙼𝚅𝚁𝙾-𝙱𝙾𝚃',
+                                                description: '【..≼قــســم الجروبات≽..】',
+                                                id: '.قسم-الجروبات'
+                            })
                         },
                         {
-                          header: '🍷لتقييم البوت🍷',
-                          title: '♡تقييم البوت♡',
-                          description: '',
-                          id: '.تقيم'
+                            name: '【التنزيلات】',
+                            buttonParamsJson: JSON.stringify({
+                                display_text: '【..≼لـسـا بـفـكـر≽..】',
+                                id: `【.قسم-التنزيلات】`
+                            })
+                        },
+                        {
+                            name: 'cta_url',
+                            buttonParamsJson: JSON.stringify({
+                                display_text: '【..≼لـيـنـكـاتـي≽..】',
+                                url: 'https://atom.bio/m_vro1',
+                                merchant_url: ''
+                            })
                         }
-                      ]
-                    }
-                  ]
-                }),
-                messageParamsJson: ''
-              }
-            ]
-          }
+                    ],
+                    messageParamsJson: ''
+                }
+            };
+
+            // Generate WhatsApp message
+            let msg = generateWAMessageFromContent(m.chat, {
+                viewOnceMessage: {
+                    message: {
+                        interactiveMessage,
+                    },
+                },
+            }, { userJid: conn.user.jid, quoted: m });
+
+            // Add mentionedJid to contextInfo
+            msg.message.viewOnceMessage.message.interactiveMessage.contextInfo = { mentionedJid: [mentionId] };
+
+            // Relay the message
+            conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
+        } else {
+            conn.sendFile(m.chat, 'JoAnimi•Error.jpg', m);
         }
-      }
+    } catch (error) {
+        console.error('Error in handler:', error);
     }
-  }, {});
-}
-
-handler.help = ['info'];
-handler.tags = ['main'];
-handler.command = ['أوامر', 'اوامر', 'الاوامر', 'ألاوامر', 'menu', 'Menu'];
-
+};
+handler.help = ['imgboton'];
+handler.tags = ['For Test'];
+handler.command = /^(اوامر|الاوامر|أوامر|الأوامر|menu|menú|memu|memú|help)$/i;
 export default handler;
