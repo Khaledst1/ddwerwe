@@ -25,9 +25,9 @@ global.igfg = '☾︎  𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇 
 global.wait = '*[🍷] انتظر جاري التحميل* ...\n\n*https://whatsapp.com/channel/0029VafG0N8I1rclRCFLaL0g*';
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
 global.imagen2 = fs.readFileSync('./https://telegra.ph/file/5613a96244591e5c1dd7c.jpg');
-global.imagen3 = fs.readFileSync('./https://telegra.ph/file/5613a96244591e5c1dd7c.jpg');
+global.imagen3 = fs.readFileSync('./Menu2.jpg');
 global.imagen4 = fs.readFileSync('./Menu2.jpg');
-global.imagen5 = fs.readFileSync('./https://telegra.ph/file/5613a96244591e5c1dd7c.jpg');
+global.imagen5 = fs.readFileSync('./Menu2.jpg');
 global.imagen6 = fs.readFileSync('./Menu2.jpg');
 
 global.mods = [];
