@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix }) => {
     conn.tekateki = conn.tekateki ? conn.tekateki : {}
     let id = m.chat
     if (id in conn.tekateki) {
-        conn.reply(m.chat, '*صبر ما تشوف فيه سؤال ؟*', conn.tekateki[id][0])
+        conn.reply(m.chat, '*صبر، لا يوجد سؤال حالياً؟*', conn.tekateki[id][0])
         throw false
     }
     let tekateki = JSON.parse(fs.readFileSync(`./src/game/acertijo.json`))
@@ -25,13 +25,13 @@ let handler = async (m, { conn, usedPrefix }) => {
        await conn.reply(m.chat, caption, m),
         json, poin,
         setTimeout(async () => {
-            if (conn.tekateki[id]) await conn.reply(m.chat, `*﹝❒═════﹝🍷﹞═════❒﹞*\n*خلص الوقت*\n*الجواب :* *(${json.response} )*\n*﹝❒═════﹝🍷﹞═════❒﹞*`, conn.tekateki[id][0])
+            if (conn.tekateki[id]) await conn.reply(m.chat, `*﹝❒═════﹝🍷﹞═════❒﹞*\n*انتهى الوقت*\n*الجواب :* *(${json.response} )*\n*﹝❒═════﹝🍷﹞═════❒﹞*`, conn.tekateki[id][0])
             delete conn.tekateki[id]
         }, timeout)
     ]
 }
 
-handler.help = ['acertijo']
+handler.help = ['سؤال']
 handler.tags = ['game']
 handler.command = /^(سؤال_انمي|سؤال)$/i
 
