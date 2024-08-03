@@ -5,14 +5,14 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
     const mentionId = m.key.participant || m.key.remoteJid;
 
     if (device !== 'desktop' && device !== 'web') {      
-        const joanimiimg = await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/2784677013ba9efe6cc03.jpg' } }, { upload: conn.waUploadToServer });
+        const joanimiimg = await prepareWAMessageMedia({ image: { url: 'https://telegra.ph/file/7f8ec545db73c533a28f9.jpg' } }, { upload: conn.waUploadToServer });
 
         const interactiveMessage = {
             body: { text: 'اختبار'.trim() },
             footer: { text: '©JoAnimi لاختبار'.trim() },  
             header: {
                 title: `مرحبا @${mentionId.split('@')[0]}`,
-                subtitle: 'اختبار',
+                subtitle: 'بوت ويليام',
                 hasMediaAttachment: true,
                 imageMessage: joanimiimg.imageMessage,
             },
