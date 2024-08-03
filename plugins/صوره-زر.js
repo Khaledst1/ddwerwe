@@ -16,7 +16,7 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
                 hasMediaAttachment: true,
                 imageMessage: joanimiimg.imageMessage,
             },
-            nativeFlowMessage: {
+  nativeFlowMessage: {
   buttons: [
    {
   name: 'single_select',
@@ -148,6 +148,6 @@ const handler = async (m, { conn, text, usedPrefix: prefijo }) => {
 
 handler.help = ['info'];
 handler.tags = ['main'];
-handler.command = ['أوامر', 'اوامر', 'الاوامر', 'ألاوامر', 'menu', 'Menu'];
+handler.command = ['أوامر', 'اوامر', 'الاوامر', 'امر', 'menu', 'Menu'];
 
 export default handler;
