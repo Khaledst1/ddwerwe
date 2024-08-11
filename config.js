@@ -10,7 +10,7 @@ import moment from 'moment-timezone';
 global.botnumber = "*『🔥┇𝑃𝑇ـ𝑃𝐴𝑇𝐶𝐻𝐸𝑅𝐴ـ𝐵𝛩𝑇』*"
 global.confirmCode = ""
 
-global.owner = [['967775302218', 'ابوهايف:♡', true],
+global.owner = [['967775302218', 'ابوهايف:♡', true],['966560801636', 'ابوهايف:♡', true],
 ];
 
 global.suittag = ['967775302218'];
